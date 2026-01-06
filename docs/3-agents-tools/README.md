@@ -25,12 +25,12 @@ As Kevin, you'll follow the Platform Engineering team's **Golden Path** - a cura
 
 ## Sections
 
-* 🎯 [Introduction to MCP Agents](0-intro.md) - Learn about MCP and the Neuralbank use case
-* 🛤️ [Golden Path & Developer Hub](1-golden-path.md) - Discover Software Templates via Developer Hub
-* 💻 [Working with DevSpaces](2-devspaces) - Set up your development environment
-* 🔧 [Build MCP Agent](3-build-mcp-agent.md) - Create the credit risk MCP Agent
-* 🔍 [Test with MCP Inspector](4-mcp-inspector.md) - Validate functionality
-* 🤖 [Deploy & Integrate](5-deploy-integrate.md) - Deploy and connect to frontend
-* 📊 [OpenTelemetry Observability](6-opentelemetry.md) - Monitor distributed traces
+* 🎯 [Introduction to MCP Agents](3-agents-tools/0-intro) - Learn about MCP and the Neuralbank use case
+* 🛤️ [Golden Path & Developer Hub](3-agents-tools/1-golden-path) - Discover Software Templates via Developer Hub
+* 💻 [Working with DevSpaces](3-agents-tools/2-devspaces) - Set up your development environment
+* 🔧 [Build MCP Agent](3-agents-tools/3-build-mcp-agent) - Create the credit risk MCP Agent
+* 🔍 [Test with MCP Inspector](3-agents-tools/4-mcp-inspector) - Validate functionality
+* 🤖 [Deploy & Integrate](3-agents-tools/5-deploy-integrate) - Deploy and connect to frontend
+* 📊 [OpenTelemetry Observability](3-agents-tools/6-opentelemetry) - Monitor distributed traces
 
 Click **Introduction to MCP Agents** to get started.

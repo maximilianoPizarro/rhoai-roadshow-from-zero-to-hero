@@ -17,8 +17,6 @@ Currently, customers experience significant delays when applying for loans. The 
 
 ![Business Use Case 2](../images/business-use-case-2.png)
 
-![Business Use Case 3](../images/business-use-case-3.png)
-
 ## The Solution: MCP Agents
 
 To solve this challenge, Neuralbank is implementing an **MCP (Model Context Protocol) Agent** that:
