@@ -1,4 +1,4 @@
-* [Cover](/)
+* [From Zero To Hero](/)
 * [OpenShift AI Setup](0-getting-connected/README)
   * [📋 Workshop Overview](0-getting-connected/0.5-workshop-overview)
   * [🏦 Neuralbank Business Case](0-getting-connected/0-business-case)
