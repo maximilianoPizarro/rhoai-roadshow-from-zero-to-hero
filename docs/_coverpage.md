@@ -81,6 +81,12 @@ Welcome to **Red Hat OpenShift AI From Zero To Hero** - a comprehensive journey 
   border-left: 4px solid #CC0000;
 }
 
+.cover.show p strong {
+  color: #FFE6E6 !important;
+  font-weight: 600 !important;
+  text-shadow: 0 2px 8px rgba(204, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.3) !important;
+}
+
 
 @keyframes subtleFade {
   0%, 100% {
