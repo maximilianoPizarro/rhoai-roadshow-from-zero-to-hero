@@ -1,101 +1,77 @@
-# Introduction
+# 🎯 Introduction to MCP Agents
 
-Let's explore the LLamaStack playground application first. This is a [Streamlit](https://streamlit.io/) built application that allows you to explore your LLamaStack deployment. You should be able to browse and login here.
+## What is MCP?
 
-<a href="https://llama-stack-playground-llama-stack.apps.<CLUSTER_DOMAIN>" target="_blank">LLamaStack playground</a>
+**Model Context Protocol (MCP)** is an open protocol that enables AI assistants to securely access external data sources and tools. MCP servers provide a standardized way for AI applications to interact with various services, databases, and APIs.
 
-## LLamaStack
+For Neuralbank, MCP Agents serve as intelligent intermediaries that:
 
-[LLamaStack](https://llama-stack.readthedocs.io/en/latest/) is the open-source framework for building generative AI applications. We have a LLamaStack server configured for our use and we are going to take a look around using the playground UI.
+- **Query Credit Risk Data**: Retrieve customer credit risk information from backend services
+- **Update Risk Levels**: Modify credit risk assessments based on loan requests
+- **Provide Transparency**: Maintain audit trails for compliance
+- **Accelerate Decisions**: Automate manual processes to speed up loan approvals
 
-If you are interested in how to configure LLamaStack, check out the [docs](https://llama-stack.readthedocs.io/en/latest/) and you can also take a look at the running config in your cluster:
+## The Neuralbank MCP Agent
 
-<a href="https://console-openshift-console.apps.<CLUSTER_DOMAIN>/k8s/ns/llama-stack/configmaps/llama-stack-config" target="_blank">ConfigMap llama-stack-config</a>
+The MCP Agent you'll build will:
 
-## Models
+1. **Receive Queries**: Commercial agents query customer credit risk via chat interface
+2. **Process Requests**: The MCP Agent processes the query and determines required actions
+3. **Interact with Services**: Connects to Neuralbank's credit risk service via Connectivity Link
+4. **Update Risk Levels**: Modifies credit risk based on loan request parameters
+5. **Return Results**: Provides updated information back to the commercial agent
 
-We have four models configured in LLamaStack. Three of them are available to `Chat` to, i.e., are type `llm` in the model dropdown. The other model is an `embedding` model used to create vector embeddings for RAG.
+## Architecture Flow
 
-```yaml
-models:
-- metadata: {}
-  model_id: ${env.LLAMA3B_MODEL}
-  provider_id: llama-3b
-  model_type: llm
-- metadata: {}
-  model_id: ${env.DEEPSEEK_MODEL}
-  provider_id: deepseek
-  model_type: llm
-- metadata:
-    embedding_dimension: 384
-  model_id: all-MiniLM-L6-v2
-  provider_id: sentence-transformers
-  model_type: embedding
-- metadata: {}
-  model_id: llama-4-scout-17b-16e-w4a16
-  provider_id: vllm-llama-4-guard
-  provider_model_id: llama-4-scout-17b-16e-w4a16
-  model_type: llm
+```
+Commercial Agent (Frontend)
+         │
+         │ Chat Query: "Update credit risk for customer X"
+         ▼
+    MCP Agent (OpenShift)
+         │
+         │ Query Credit Risk Service
+         ▼
+    Credit Risk Service (Backend)
+         │
+         │ Update Risk Level
+         ▼
+    Database
+         │
+         │ Return Updated Risk
+         ▼
+    MCP Agent
+         │
+         │ Return Result
+         ▼
+Commercial Agent (Frontend)
+    "Credit risk updated successfully"
 ```
 
-![images/model-intro.png](images/model-intro.png)
+## Key Components
 
-The *llama-3* and *deepseek* models are running locally in the OpenShift cluster - they are small in terms of parameter size (3b and 8b) and the DeepSeek model is quantized to 4-bit. This reduces the amount of memory they consume on the GPU. Even so we are using 18Gi of nvram to run the LLM's. If you browse to the <a href="https://console-openshift-console.apps.<CLUSTER_DOMAIN>/k8s/ns/llama-serving/core~v1~Pod" target="_blank">Deepseek Pod</a> enter the `Terminal` and run `nvtop` on the command line to see the GPU performance.
+### MCP Server
+The MCP server runs on OpenShift and implements the Model Context Protocol. It exposes:
+- **Tools**: Functions that can query and update credit risk
+- **Resources**: Access to credit risk data
+- **Prompts**: Pre-configured prompts for common operations
 
-The *llama-4 scout* model is running in a Model as a Service (MaaS) externally to the cluster. It is a much larger LLM (17b), but still quantized (w4a16).
+### Integration Points
+- **Keycloak**: Authentication and authorization
+- **Connectivity Link**: Service-to-service communication
+- **Credit Risk Service**: Backend Java service managing risk data
+- **Frontend**: Commercial agent chat interface (Playground)
 
-![images/model-gpu.png](images/model-gpu.png)
+## Benefits for Neuralbank
 
-## Chat
+✅ **Faster Decisions**: Reduce credit approval time from days to minutes  
+✅ **Scalability**: Handle increasing loan volumes without proportional staff increases  
+✅ **Compliance**: Full audit trail of all operations  
+✅ **Transparency**: Clear visibility into risk assessment changes  
+✅ **Developer Experience**: Easy to develop, test, and deploy using Golden Path  
 
-You can chat with either of the three LLM models. You should note that the llama-3 model is an [instruction tuned model](https://huggingface.co/meta-llama/Llama-3.2-3B) whilst the deepseek model is a [reasoning model](https://huggingface.co/unsloth/DeepSeek-R1-0528-Qwen3-8B-bnb-4bit). Deepseek will produce reasoning tokens (between \<think\>) where it will try to break a problem down into steps prior to generating output tokens.
+## What's Next?
 
-![images/chat-intro.png](images/chat-intro.png)
+Now that you understand the basics, let's explore the **Golden Path** that the Platform Engineering team has prepared for you. This will make it easy to get started with your development environment.
 
-The llama-4 model running in MaaS is a RedHat validated model and is a [Mixture of Experts (MoE)](https://huggingface.co/blog/moe) model - you can see the RedHat validated models on [RedHatAI Hugging Face](https://huggingface.co/RedHatAI/Llama-4-Scout-17B-16E-Instruct-quantized.w4a16)
-
-## RAG
-
-LLamaStack is configured to use an inbuilt version of the [Milvus vector database](https://llama-stack.readthedocs.io/en/latest/providers/vector_io/milvus.html) for Retrieval Augmented Generation (RAG).
-
-```yaml
-  vector_io:
-  - provider_id: milvus
-    provider_type: inline::milvus
-    config:
-      db_path: ${env.MILVUS_DB_PATH}
-```
-
-If you want, you can try it out by uploading a TXT, PDF, DOC, DOCX document, then `Create Document Collection` and use it for RAG.
-
-![images/rag-intro.png](images/rag-intro.png)
-
-I uploaded the famous [**bitcoin.pdf**](https://bitcoin.org/bitcoin.pdf) document from Satoshi 🤑
-
-Note that the context sizes (max tokens) for the models are set as follows, so use the Llama4 model for best results (you may get errors depending on your document size).
-
-```yaml
-Llama3:    15000
-DeepSeek:  10000
-Llama4:    110000
-```
-
-## Tools, Agents and MCP Servers
-
-We are going to deep dive into Agents and Tools, Model Context Protocol servers (MCP) in this section and see how we can create and use them. 
-
-The LLamaStack playground is configured for many tools - for example check the ConfigMap for tool_groups.
-
-```yaml
-tool_groups:
-- provider_id: tavily-search
-  toolgroup_id: builtin::websearch
-```
-
-You can select tools and agents in the playground.
-
-![images/tools-intro.png](images/tools-intro.png)
-
-For example, select the `weather` MCP server, LLama model and Regular agent - and try asking for the weather in New York today
-
-![images/weather-tool.png](images/weather-tool.png)
+Click **Golden Path & Developer Hub** to continue.

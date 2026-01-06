@@ -1,1 +1,1 @@
-# Red Hat OpenShift AI Roadshow
+# Red Hat OpenShift AI From Zero To Hero

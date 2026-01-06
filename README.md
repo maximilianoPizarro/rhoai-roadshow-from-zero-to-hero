@@ -1,10 +1,10 @@
-# Red Hat OpenShift AI Roadshow II
+# Red Hat OpenShift AI From Zero To Hero
 
-This repo contains a revised OpenShift AI Roadshow v2 - half-day customer event.
+This repo contains the **Red Hat OpenShift AI From Zero To Hero** workshop - a comprehensive journey from business use case to production-ready AI solution.
 
 The instructions for the workshop are located under the `docs` directory.  
 
-To start the document server, follow the instructions [here](https://github.com/odh-labs/rhoai-roadshow-v2/blob/main/site/README.md).
+To start the document server, follow the instructions [here](https://github.com/maximilianoPizarro/rhoai-roadshow-from-zero-to-hero/blob/main/site/README.md).
 
 ## Vision
 
@@ -40,4 +40,9 @@ The roadshow will provide value to multiple personas:
 
 ## Content
 
-Will focus on developing all of the green capabilities in the [scoping doc](https://github.com/odh-labs/rhoai-roadshow/blob/main/images/genai-technical-use-cases.png)
+This workshop focuses on building MCP Agents for Neuralbank, a financial institution use case, covering:
+
+- **OpenShift AI Setup**: Getting connected and configuring your environment
+- **MCP Agents**: Building and deploying agents for credit risk management
+- **Models**: Working with Red Hat AI Inference Server (RHAIIS) for model serving
+- **Observability**: Monitoring with OpenTelemetry distributed traces

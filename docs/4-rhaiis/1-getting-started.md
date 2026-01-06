@@ -64,7 +64,7 @@ Your instructor will supply you with a link that you will use to login to your O
 
    OpenShift AI prompts you to enter the repositor URL and other options.  
 
-5. Copy and paste the following URI into the text box: `https://github.com/odh-labs/rhoai-roadshow-v2.git`
+5. Copy and paste the following URI into the text box: `https://github.com/maximilianoPizarro/rhoai-roadshow-from-zero-to-hero.git`
 
 6. Click **Include submodules**.
 
@@ -76,6 +76,6 @@ Your instructor will supply you with a link that you will use to login to your O
 
     ![images/clone-git-repo-3.png](images/clone-git-repo-3.png)
 
-8. Go into the `rhoai-roadshow-v2` folder and open the top level `4-rhaiis.jupyterlab-workspace` workspace.
+8. Go into the `rhoai-roadshow-from-zero-to-hero` folder and open the top level `4-rhaiis.jupyterlab-workspace` workspace.
 
     You are now ready to move on to the next section.

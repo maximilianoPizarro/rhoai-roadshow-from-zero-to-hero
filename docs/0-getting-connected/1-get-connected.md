@@ -1,16 +1,13 @@
-# 💁 Introduction
+# 🔌 Get Connected
 
-We are going to cover the basics to get started with RHOAI. Feel free to skip this section if you are already familiar with the the RHOAI UX.
+Welcome, Kevin! Let's get you connected to the OpenShift AI environment so you can start working on the Neuralbank MCP Agent project.
 
-This workshop uses JupyterLab for most of the activities. In this exercise we will:
+In this exercise we will:
 
-1. Connect to the workshop environment
-
-2. Create the OpenShift AI **Project** that you will use for the entire workshop.
-
-3. Create a **Workbench** for you to do your work
-
-4. Get familiar with the JupyterLab environment
+1. Connect to the OpenShift AI environment
+2. Create the OpenShift AI **Project** for the Neuralbank MCP Agent
+3. Get familiar with the environment setup
+4. Prepare for accessing the Developer Hub and Golden Path
 
 ## Login to OpenShift AI
 
@@ -38,7 +35,7 @@ After logging on to OpenShift you will open the OpenShift AI platform from the A
 
 1. Click the **Create project** button on the top right of the display.
 
-2. Type `ai-roadshow` in the **Name** text box.
+2. Type `neuralbank-mcp` in the **Name** text box.
 
     ![images/create-project-2.png](images/create-project-2.png)  
 
@@ -55,8 +52,8 @@ After logging on to OpenShift you will open the OpenShift AI platform from the A
 
 2. Enter the following details into the *Create workbench* form:  
 
-    Name: **getting-connected**  
-    Image Selection: **Minimal Python**  
+    Name: **neuralbank-dev**  
+    Image Selection: **Standard Data Science** (or **Minimal Python** if preferred)  
     Version: **2025.1 (Recommended)**  
     Hardware profile: **Small**  
 
@@ -96,7 +93,7 @@ After logging on to OpenShift you will open the OpenShift AI platform from the A
 
    OpenShift AI prompts you to enter the repository URL and other options.  
 
-5. Copy and paste the following into the *URI of the remote Git repository* text box: `https://github.com/odh-labs/rhoai-roadshow-v2.git`  
+5. Copy and paste the following into the *URI of the remote Git repository* text box: `https://github.com/maximilianoPizarro/rhoai-roadshow-from-zero-to-hero.git`  
 
 6. Click **Include submodules**.
 
@@ -108,16 +105,13 @@ After logging on to OpenShift you will open the OpenShift AI platform from the A
 
     ![images/clone-git-repo-3.png](images/clone-git-repo-3.png)
 
-8. In the *File Explorer* panel, navigate into the directory: `/rhoai-roadshow-v2`
+8. In the *File Explorer* panel, navigate into the directory: `/rhoai-roadshow-from-zero-to-hero`
 
     ![images/clone-git-repo-4.png](images/clone-git-repo-4.png)
 
-9. Double click **0-get-connected.jupyterlab-workspace** to open the workspace for this activity.  
-   JupyterLab opens the workspace. All of the notebooks you will use are visible in the *File Explorer*.  
+When done, you have successfully connected to your environment. 
 
-    ![images/clone-git-repo-5.png](images/clone-git-repo-5.png)
-
-When done, you have successfully connected to your environment.
+?> **Note** In the next section, you'll learn about the **Golden Path** and how to use **Developer Hub** with **Cursor** to generate your development workspace automatically using Software Templates. This is the modern approach that the Platform Engineering team has prepared for you!
 
 ## Get familiar with JupyterLab
 
@@ -163,7 +157,7 @@ Now that you know the basics, give it a try!
 
 In your workbench:
 
-1. In the _File Explorer_ open the notebook called: <a href="https://github.com/odh-labs/rhoai-roadshow-v2/blob/main/docs/0-getting-connected/notebook/0-first-jupyter-notebook.ipynb" target="_blank">0-first-jupyter-notebook.ipynb</a>
+1. In the _File Explorer_ open the notebook called: <a href="https://github.com/maximilianoPizarro/rhoai-roadshow-from-zero-to-hero/blob/main/docs/0-getting-connected/notebook/0-first-jupyter-notebook.ipynb" target="_blank">0-first-jupyter-notebook.ipynb</a>
 
 2. Experiment by, for example, running the existing cells, adding more cells and creating functions.  
 

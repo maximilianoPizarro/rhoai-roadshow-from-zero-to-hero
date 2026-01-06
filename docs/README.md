@@ -1,47 +1,57 @@
-# Red Hat OpenShift AI Roadshow
+# Red Hat OpenShift AI From Zero To Hero
 
-<!-- panels:start -->
-<!-- div:floating-cat -->
-<img src="images/daisy.png">
+Welcome to **Red Hat OpenShift AI From Zero To Hero** - a comprehensive journey from business use case to production-ready AI solution.
 
-🐈 Daisy Cat is famous !🐈 and was one of the main attractions in the PetBattle app that formed the technical exercises in the book - [DevOps Culture and Practice with OpenShift - Deliver continuous business value through people, process, and technology](https://www.redhat.com/en/engage/devops-culture-practice-openshift-ebooks). Daisy inspired us to use many of the open practices described in the book to help deliver this Roadshow and we hope that you are like Daisy, where [**curiosity killed the cat but satisfaction brought it back**](https://en.wikipedia.org/wiki/Curiosity_killed_the_cat).
-<!-- panels:end -->
+## Business Use Case
 
-<!-- tabs:start -->
+**Neuralbank** is a financial institution that provides loans to its customers. Currently, customers experience significant delays in obtaining credit due to the manual process of updating credit risk levels. The institution needs a scalable, transparent, and auditable AI solution that, based on customer loan requests, provides a human-interface to update their credit risk level, accelerating credit decisions while minimizing compliance exposure.
 
-#### **English**
+## The Scenario
 
-🐑🐑 Hello! 🐑🐑
+You are **Kevin**, a new Java developer joining Neuralbank's development team. Your mission is to help incorporate **MCP (Model Context Protocol) Agents** into the organization's infrastructure.
 
-#### **German**
+### About Neuralbank
 
-🍺🍺 Hallo! 🍺🍺
+Neuralbank operates with a modern architecture:
+- **Frontend**: Customer-facing applications
+- **Backend**: Java-based services
+- **Authentication**: Keycloak for identity management
+- **Connectivity**: Connectivity Link for service integration
 
-#### **French**
+### The Challenge
 
-🐀🐀 Bonjour! 🐀🐀
+The current credit approval process involves manual risk assessment updates, causing delays. Commercial agents need a faster way to:
+1. Query customer credit risk information
+2. Update credit risk levels based on loan requests
+3. Accelerate the decision-making process
 
-#### **Italian**
+### The Solution
 
-🦜🦜 Ciao! 🦜🦜
+An **MCP Agent** integrated into the system that allows commercial agents to:
+- Query credit risk information via chat interface (Playground)
+- Automatically update credit risk levels
+- Provide transparent and auditable operations
 
-#### **Spanish**
+## Developer Experience Journey
 
-🦄🦄 Hola 🦄🦄
+To improve Developer Experience, the Platform Engineering team has created a **Golden Path** with best practices and quality standards. This includes everything needed for developers like Kevin to:
 
-#### **Japanese**
+- Generate a development environment with the agent and code repository
+- Work directly on the OpenShift cluster using **DevSpaces** workspace
+- Access pre-configured **Software Templates** via **Developer Hub** (consulted through Cursor)
+- Test and validate using **MCP Inspector** and **Cursor**
+- Monitor operations with **OpenTelemetry** distributed tracing
 
-🦩🦩 こんにちは 🦩🦩
+## What You'll Learn
 
-#### **Chinese**
+This journey covers:
 
-🐼 你好 🐼
+1. **OpenShift AI Setup** - Getting connected and configuring your environment
+2. **MCP Agents** - Building and deploying agents for credit risk management
+3. **Models** - Working with Red Hat AI Inference Server (RHAIIS) for model serving
+4. **Observability** - Monitoring with OpenTelemetry distributed traces
 
-<!-- tabs:end -->
-
-Welcome the the RHOAI Roadshow. Each of the modules is self-contained so can be run on the provided environment separately.
-
-You get to choose the adventure you wish to explore Red Hat OpenShift AI with.
+Let's begin your journey from zero to hero!
 
 ?> **Note** All images have _lightbox_ attached to them so they can overlay on top of the web page so you can see them. Just click on them ! (and click to minimize again)
 
