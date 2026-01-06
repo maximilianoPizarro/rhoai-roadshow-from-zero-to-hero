@@ -45,6 +45,8 @@ Neuralbank's infrastructure includes:
 
 ## Your Role as Kevin
 
+![Kevin - Java Developer](../images/kevin-dev.png)
+
 As a new Java developer joining Neuralbank, you will:
 
 1. **Understand the Architecture**: Learn about Neuralbank's frontend/backend architecture with Keycloak and Connectivity Link

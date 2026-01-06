@@ -21,3 +21,4 @@
   * [🛼 Optimize models](4-rhaiis/4-optimize-models.md)
   * [📚 Validated models](4-rhaiis/5-validated-models.md)
   * [🧹 Cleanup](4-rhaiis/6-cleanup.md)
+* [👥 About the Team](5-about-the-team/README.md)
