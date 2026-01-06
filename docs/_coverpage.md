@@ -48,17 +48,20 @@ Welcome to **Red Hat OpenShift AI From Zero To Hero** - a comprehensive journey 
   align-items: center;
   min-height: 100vh;
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .cover.show h1 {
   font-family: 'RedHatDisplay', 'RedHatText', Overpass, 'Open Sans', Helvetica, Arial, sans-serif !important;
-  font-size: 5rem !important;
+  font-size: 4rem !important;
   font-weight: 700 !important;
-  color: #CC0000 !important;
-  margin: 0 0 1.5rem 0 !important;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(204, 0, 0, 0.5) !important;
-  letter-spacing: -0.02em !important;
-  line-height: 1.1 !important;
+  color: #FFFFFF !important;
+  margin: 0 0 1rem 0 !important;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.9), 0 3px 12px rgba(204, 0, 0, 0.7), 0 0 50px rgba(204, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.2 !important;
   text-align: center !important;
 }
 
@@ -93,18 +96,19 @@ Welcome to **Red Hat OpenShift AI From Zero To Hero** - a comprehensive journey 
 }
 
 @media (max-width: 768px) {
+  .cover.show .cover-main {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
   .cover.show h1 {
-    font-size: 3.5rem !important;
+    font-size: 2.5rem !important;
   }
   
   .cover.show p {
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
     padding: 1rem 1.5rem !important;
-  }
-  
-  .cover-portada-image {
-    max-width: 100%;
-    margin-top: 1.5rem;
+    max-width: 100% !important;
   }
 }
 </style>

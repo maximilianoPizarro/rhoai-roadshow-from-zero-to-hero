@@ -9,3 +9,14 @@ Follow all instructions from inside the Notebook.
 ![images/default-models.png](images/default-models.png)
 
 🎉 Congratulations! You are now ready to proceed to the next activity.
+
+---
+
+## Continue Your Journey
+
+✅ **Next**: [Resources](../6-resources/README.md) - Source code, installation methods, and more  
+👥 **About**: [About the Team](../5-about-the-team/README.md) - Thank you for participating!
+
+---
+
+**Return to**: [Main Page](/)
