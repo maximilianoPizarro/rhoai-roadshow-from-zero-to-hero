@@ -36,7 +36,7 @@ git push
 
 2. **Login**: Authenticate via Keycloak (see [Keycloak User Management](2.5-keycloak-user-management.md))
 
-![Neuralbank Home](../../images/neuralbank-home.png)
+![Neuralbank Home](../images/neuralbank-home.png)
 
 ### Step 3: Select MCP Server
 
@@ -44,7 +44,7 @@ git push
 2. **Select customer-service-mcp**: Choose your service from the list
 3. **Verify Connection**: Ensure the service is connected and tools are available
 
-![Customer Service](../../images/customer-service.png)
+![Customer Service](../images/customer-service.png)
 
 ### Step 4: Test Query Tool
 
@@ -67,7 +67,7 @@ Test the `update_credit_risk` tool:
    ```
 2. **Review Response**: Should show updated risk level
 
-![Update Risk Level](../../images/update-risk-level.png)
+![Update Risk Level](../images/update-risk-level.png)
 
 ### Step 6: Verify Risk Update
 
@@ -124,13 +124,13 @@ Here's the complete flow:
 
 You can also use Cursor to interact with the MCP agent:
 
-![Cursor Prompt](../../images/cursor-prompt.png)
+![Cursor Prompt](../images/cursor-prompt.png)
 
 1. **Open Cursor**: In your DevSpaces workspace or locally
 2. **Configure MCP**: Point Cursor to your `customer-service-mcp` service
 3. **Test Queries**: Ask Cursor to use MCP tools
 
-![Cursor Prompt 2](../../images/cursor-prompt-2.png)
+![Cursor Prompt 2](../images/cursor-prompt-2.png)
 
 ### Example Cursor Queries
 

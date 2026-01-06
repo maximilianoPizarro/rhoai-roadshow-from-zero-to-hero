@@ -25,7 +25,7 @@ The `customer-service-mcp` service is instrumented with OpenTelemetry. You can v
 
 ### Distributed Traces
 
-![OpenTelemetry customer-service-mcp Traces](../../images/optl-customer-service-mcp.png)
+![OpenTelemetry customer-service-mcp Traces](../images/optl-customer-service-mcp.png)
 
 The trace view shows:
 
@@ -37,7 +37,7 @@ The trace view shows:
 
 ### Service Logs
 
-![OpenTelemetry customer-service-mcp Logs](../../images/optl-customer-service-mcp-logs.png)
+![OpenTelemetry customer-service-mcp Logs](../images/optl-customer-service-mcp-logs.png)
 
 The logs view provides:
 
@@ -326,7 +326,7 @@ The `customer-service-mcp` service is instrumented with OpenTelemetry. You can v
 
 ### Distributed Traces
 
-![OpenTelemetry customer-service-mcp Traces](../../images/optl-customer-service-mcp.png)
+![OpenTelemetry customer-service-mcp Traces](../images/optl-customer-service-mcp.png)
 
 The trace view shows:
 
@@ -338,7 +338,7 @@ The trace view shows:
 
 ### Service Logs
 
-![OpenTelemetry customer-service-mcp Logs](../../images/optl-customer-service-mcp-logs.png)
+![OpenTelemetry customer-service-mcp Logs](../images/optl-customer-service-mcp-logs.png)
 
 The logs view provides:
 

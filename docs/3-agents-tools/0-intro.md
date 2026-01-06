@@ -15,7 +15,7 @@ For Neuralbank, MCP Agents serve as intelligent intermediaries that:
 
 **LlamaStack** is the open-source framework for building generative AI applications. It provides a comprehensive platform for deploying and managing LLMs, tools, agents, and MCP servers.
 
-![LlamaStack Overview](../../images/llama-stack.png)
+![LlamaStack Overview](../images/llama-stack.png)
 
 LlamaStack features:
 
@@ -41,7 +41,7 @@ The MCP Agent you'll build will:
 
 The Neuralbank topology is already installed in your environment. Let's explore the architecture:
 
-![Neuralbank Topology](../../images/neuralbank-tology.png)
+![Neuralbank Topology](../images/neuralbank-tology.png)
 
 The topology shows the complete system architecture including:
 
@@ -51,7 +51,7 @@ The topology shows the complete system architecture including:
 - **Connectivity Link**: Service mesh for secure communication
 - **MCP Agent**: The `customer-service-mcp` service you'll develop
 
-![Neuralbank Topology with Connectivity Link](../../images/neuralbank-tology-connectivity-link.png)
+![Neuralbank Topology with Connectivity Link](../images/neuralbank-tology-connectivity-link.png)
 
 ## Architecture Flow
 

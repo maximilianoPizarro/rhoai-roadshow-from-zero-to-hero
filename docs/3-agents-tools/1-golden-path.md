@@ -27,7 +27,7 @@ For Kevin (and you), the Golden Path means you can:
 
 2. You'll see a catalog of available Software Templates
 
-![Developer Hub](../../images/developer-hub.png)
+![Developer Hub](../images/developer-hub.png)
 
 ## Using the Golden Path Template
 
@@ -48,7 +48,7 @@ The Platform Engineering team has created a specific template for Neuralbank MCP
 
 2. **Search for Template**: Look for "Quarkus MCP Server" or "customer-service-mcp"
 
-![Quarkus MCP Template](../../images/quarkus-mcp-template.png)
+![Quarkus MCP Template](../images/quarkus-mcp-template.png)
 
 ### Step 2: Create from Template
 
@@ -60,11 +60,11 @@ The Platform Engineering team has created a specific template for Neuralbank MCP
    - **Git Repository**: Your repository URL (or leave default)
    - **Namespace**: `neuralbank-mcp`
 
-![Customer Service MCP Template](../../images/customer-service-mcp-template.png)
+![Customer Service MCP Template](../images/customer-service-mcp-template.png)
 
 3. **Review Configuration**: The template will show you what will be generated
 
-![Customer Service MCP Template Review](../../images/customer-service-mcp-template-review.png)
+![Customer Service MCP Template Review](../images/customer-service-mcp-template-review.png)
 
 ### Step 3: Generate the Project
 
@@ -77,9 +77,9 @@ The Platform Engineering team has created a specific template for Neuralbank MCP
    - Documentation
    - Test suites
 
-![Customer Service MCP Template 2](../../images/customer-service-mcp-template-2.png)
+![Customer Service MCP Template 2](../images/customer-service-mcp-template-2.png)
 
-![Customer Service MCP Template 3](../../images/customer-service-mcp-template-3.png)
+![Customer Service MCP Template 3](../images/customer-service-mcp-template-3.png)
 
 ### Step 4: Review Generated Code
 
@@ -90,7 +90,7 @@ The template generates a Quarkus-based MCP server with:
 - **Integration Layer**: Connectivity Link and Keycloak integration
 - **OpenTelemetry**: Pre-configured observability
 
-![Quarkus MCP Server](../../images/quarkus-mcp-server.png)
+![Quarkus MCP Server](../images/quarkus-mcp-server.png)
 
 ## What Gets Generated
 

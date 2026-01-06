@@ -11,7 +11,7 @@ The `customer-service-mcp` service is a **Quarkus MCP Server** that:
 3. **Integrates with Backend**: Connects to Neuralbank's services via Connectivity Link
 4. **Handles Authentication**: Uses Keycloak for secure access
 
-![Customer Service MCP Component](../../images/customer-service-mcp-component.png)
+![Customer Service MCP Component](../images/customer-service-mcp-component.png)
 
 ## Generated Code Structure
 

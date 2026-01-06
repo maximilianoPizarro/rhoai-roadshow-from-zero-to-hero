@@ -4,7 +4,7 @@
 
 **Neuralbank** is a forward-thinking financial institution that provides loans to customers. Like many financial organizations, Neuralbank faces challenges in accelerating credit decisions while maintaining compliance and transparency.
 
-![Business Use Case](../../images/business-use-case.png)
+![Business Use Case](../images/business-use-case.png)
 
 ## The Problem
 
@@ -15,9 +15,9 @@ Currently, customers experience significant delays when applying for loans. The 
 3. **Compliance Requirements**: All operations must be transparent and auditable
 4. **Scalability Issues**: As the institution grows, manual processes don't scale
 
-![Business Use Case 2](../../images/business-use-case-2.png)
+![Business Use Case 2](../images/business-use-case-2.png)
 
-![Business Use Case 3](../../images/business-use-case-3.png)
+![Business Use Case 3](../images/business-use-case-3.png)
 
 ## The Solution: MCP Agents
 
@@ -32,7 +32,7 @@ To solve this challenge, Neuralbank is implementing an **MCP (Model Context Prot
 
 The Neuralbank topology is already installed in your environment. The complete architecture includes:
 
-![Neuralbank Topology](../../images/neuralbank-tology.png)
+![Neuralbank Topology](../images/neuralbank-tology.png)
 
 Neuralbank's infrastructure includes:
 
@@ -41,7 +41,7 @@ Neuralbank's infrastructure includes:
 - **Backend Services**: Java-based services including Credit Risk Service and MCP Agent
 - **Connectivity Link**: Service mesh for secure service-to-service communication
 
-![Neuralbank Topology with Connectivity Link](../../images/neuralbank-tology-connectivity-link.png)
+![Neuralbank Topology with Connectivity Link](../images/neuralbank-tology-connectivity-link.png)
 
 ## Your Role as Kevin
 

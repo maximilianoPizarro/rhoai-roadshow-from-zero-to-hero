@@ -316,6 +316,86 @@
     .w-full {
       width: 100%;
     }
+    
+    /* Cover Page Styling - Red Hat Theme */
+    .cover.show {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cover.show::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('images/redhatone.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50%;
+      opacity: 0.04;
+      z-index: 0;
+      filter: blur(3px);
+      pointer-events: none;
+    }
+    
+    .cover.show::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, rgba(204, 0, 0, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .cover.show .cover-main {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cover.show h1 {
+      color: #FFFFFF !important;
+      font-family: 'RedHatDisplay', 'RedHatText', Overpass, 'Open Sans', Helvetica, Arial, sans-serif !important;
+      font-weight: 700 !important;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(204, 0, 0, 0.3) !important;
+      letter-spacing: -0.02em !important;
+    }
+    
+    .cover.show h2 {
+      color: #CC0000 !important;
+      font-family: 'RedHatDisplay', 'RedHatText', Overpass, 'Open Sans', Helvetica, Arial, sans-serif !important;
+      font-weight: 400 !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+    }
+    
+    .cover.show p {
+      color: #E8E8E8 !important;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .cover.show .cover-main > *:first-child {
+      margin-top: 0;
+    }
+    
+    /* Subtle animation for cover */
+    @keyframes subtleFade {
+      0%, 100% {
+        opacity: 0.04;
+      }
+      50% {
+        opacity: 0.06;
+      }
+    }
+    
+    .cover.show::before {
+      animation: subtleFade 8s ease-in-out infinite;
+    }
   </style>
 </body>
 </html>
