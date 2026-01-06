@@ -48,7 +48,7 @@ Welcome to **Red Hat OpenShift AI From Zero To Hero** - a comprehensive journey 
   align-items: center;
   min-height: 100vh;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   width: 100%;
 }
