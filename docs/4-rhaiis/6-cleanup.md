@@ -14,8 +14,8 @@ Follow all instructions from inside the Notebook.
 
 ## Continue Your Journey
 
-✅ **Next**: [Resources](../6-resources/README.md) - Source code, installation methods, and more  
-👥 **About**: [About the Team](../5-about-the-team/README.md) - Thank you for participating!
+✅ **Next**: [Resources](6-resources/README) - Source code, installation methods, and more  
+👥 **About**: [About the Team](5-about-the-team/README) - Thank you for participating!
 
 ---
 

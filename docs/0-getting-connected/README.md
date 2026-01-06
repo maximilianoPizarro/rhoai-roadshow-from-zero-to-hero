@@ -13,8 +13,8 @@ In this section, you will:
 
 ## Sections
 
-* 🏦 [Neuralbank Business Case](0-business-case.md) - Understand the problem we're solving
-* 🔌 [Get Connected](1-get-connected.md) - Connect to OpenShift AI
-* ⚙️ [Configure Environment](2-configure-environment.md) - Set up your development workspace
+* 🏦 [Neuralbank Business Case](0-business-case) - Understand the problem we're solving
+* 🔌 [Get Connected](1-get-connected) - Connect to OpenShift AI
+* ⚙️ [Configure Environment](2-configure-environment) - Set up your development workspace
 
 Click **Neuralbank Business Case** to get started.

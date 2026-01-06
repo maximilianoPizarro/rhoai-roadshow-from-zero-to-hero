@@ -39,5 +39,5 @@ Your environment is now configured. In the next section, you'll learn about the 
 
 ## Continue Your Journey
 
-✅ **Next**: [Introduction to MCP Agents](../3-agents-tools/0-intro.md) - Learn about MCP and the Neuralbank use case
+✅ **Next**: [Introduction to MCP Agents](3-agents-tools/0-intro) - Learn about MCP and the Neuralbank use case
 

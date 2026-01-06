@@ -140,4 +140,4 @@ The generated code includes **commented-out sections** that Kevin needs to uncom
 
 Now that you understand the Golden Path and Developer Hub, let's set up your **DevSpaces workspace** to start developing directly on OpenShift.
 
-Click **DevSpaces Workspace** to continue.
+Click **Working with DevSpaces** to continue.

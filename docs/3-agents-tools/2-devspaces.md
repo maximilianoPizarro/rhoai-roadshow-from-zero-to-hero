@@ -1,4 +1,4 @@
-# 💻 DevSpaces Workspace
+# 💻 Working with DevSpaces
 
 ## What is DevSpaces?
 

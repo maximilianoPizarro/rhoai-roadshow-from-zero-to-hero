@@ -27,7 +27,7 @@ As Kevin, you'll follow the Platform Engineering team's **Golden Path** - a cura
 
 * 🎯 [Introduction to MCP Agents](0-intro.md) - Learn about MCP and the Neuralbank use case
 * 🛤️ [Golden Path & Developer Hub](1-golden-path.md) - Discover Software Templates via Developer Hub
-* 💻 [DevSpaces Workspace](2-devspaces.md) - Set up your development environment
+* 💻 [Working with DevSpaces](2-devspaces) - Set up your development environment
 * 🔧 [Build MCP Agent](3-build-mcp-agent.md) - Create the credit risk MCP Agent
 * 🔍 [Test with MCP Inspector](4-mcp-inspector.md) - Validate functionality
 * 🤖 [Deploy & Integrate](5-deploy-integrate.md) - Deploy and connect to frontend
