@@ -1,18 +1,10 @@
 # From Zero To Hero
 
-<div class="cover-hero">
-  <h1>Red Hat OpenShift AI</h1>
-  <h2>From Zero To Hero</h2>
-  <p class="cover-description">A comprehensive journey from business use case to production-ready AI solution</p>
-</div>
+Welcome to **Red Hat OpenShift AI From Zero To Hero** - a comprehensive journey from business use case to production-ready AI solution.
 
 <div class="cover-team">
   <img src="images/portada-team.png" alt="Development Team" class="cover-team-image" />
   <img src="images/team-effort.png" alt="Team Effort" class="cover-team-image" />
-</div>
-
-<div class="cover-footer">
-  <p class="cover-tagline">Building intelligent applications with MCP Agents, LlamaStack, and OpenShift AI</p>
 </div>
 
 <style>
@@ -63,13 +55,6 @@
   padding: 2rem;
 }
 
-.cover-hero {
-  text-align: center;
-  z-index: 1;
-  position: relative;
-  margin-bottom: 3rem;
-}
-
 .cover.show h1 {
   font-family: 'RedHatDisplay', 'RedHatText', Overpass, 'Open Sans', Helvetica, Arial, sans-serif !important;
   font-size: 4.5rem !important;
@@ -81,25 +66,16 @@
   line-height: 1.1 !important;
 }
 
-.cover.show h2 {
-  font-family: 'RedHatDisplay', 'RedHatText', Overpass, 'Open Sans', Helvetica, Arial, sans-serif !important;
-  font-size: 3rem !important;
-  font-weight: 400 !important;
-  color: #CC0000 !important;
-  margin: 0 0 1.5rem 0 !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
-  letter-spacing: 0.05em !important;
-}
-
-.cover-description {
+.cover.show p {
   font-family: 'RedHatText', Overpass, 'Open Sans', Helvetica, Arial, sans-serif !important;
   font-size: 1.5rem !important;
   color: #E8E8E8 !important;
-  margin: 0 !important;
+  margin: 2rem 0 3rem 0 !important;
   font-weight: 300 !important;
   line-height: 1.6 !important;
-  max-width: 800px !important;
+  max-width: 900px !important;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  text-align: center !important;
 }
 
 .cover-team {
@@ -107,15 +83,15 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
   z-index: 1;
   position: relative;
   flex-wrap: wrap;
 }
 
 .cover-team-image {
-  max-width: 400px;
-  max-height: 300px;
+  max-width: 450px;
+  max-height: 350px;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(204, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -125,23 +101,6 @@
 .cover-team-image:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(204, 0, 0, 0.3);
-}
-
-.cover-footer {
-  text-align: center;
-  z-index: 1;
-  position: relative;
-  margin-top: 2rem;
-}
-
-.cover-tagline {
-  font-family: 'RedHatText', Overpass, 'Open Sans', Helvetica, Arial, sans-serif !important;
-  font-size: 1.2rem !important;
-  color: #B8B8B8 !important;
-  margin: 0 !important;
-  font-weight: 300 !important;
-  font-style: italic !important;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
 }
 
 @keyframes subtleFade {
@@ -162,11 +121,7 @@
     font-size: 3rem !important;
   }
   
-  .cover.show h2 {
-    font-size: 2rem !important;
-  }
-  
-  .cover-description {
+  .cover.show p {
     font-size: 1.2rem !important;
   }
   
@@ -177,7 +132,7 @@
   
   .cover-team-image {
     max-width: 100%;
-    max-height: 200px;
+    max-height: 250px;
   }
 }
 </style>
