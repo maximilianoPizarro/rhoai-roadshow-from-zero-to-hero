@@ -1,201 +1,99 @@
 # 🤖 Deploy & Integrate
 
-Now that your MCP Agent is built and tested, let's deploy it to OpenShift and integrate it with Neuralbank's frontend so commercial agents can use it.
+Now that your `customer-service-mcp` is built and tested in DevSpaces, let's integrate it with LlamaStack Playground so commercial agents can use it.
 
-## Deployment Strategy
+## Development Approach
 
-We'll deploy the MCP Agent to OpenShift with:
+**Important**: The `customer-service-mcp` service is **not deployed using `oc` commands**. Instead:
 
-- **High Availability**: Multiple replicas
-- **Health Checks**: Liveness and readiness probes
-- **Service Discovery**: Kubernetes services for internal communication
-- **External Access**: Route for frontend integration
-- **Monitoring**: OpenTelemetry instrumentation
+- **Developed in DevSpaces**: All development happens in your DevSpaces workspace
+- **Tested Locally**: Use Quarkus dev mode for local testing
+- **Integrated via Git**: Committed code is automatically available to Playground
+- **Runtime in OpenShift**: The service runs automatically when accessed via Playground
 
-## Deploying to OpenShift
+## Integration with LlamaStack Playground
 
-### 1. Build Container Image
+The `customer-service-mcp` integrates with LlamaStack Playground, allowing commercial agents to interact with the credit risk system through a chat interface.
 
-First, build and push your container image:
+### Step 1: Verify Service is Committed
 
-```bash
-# Build the image
-podman build -t neuralbank/mcp-agent:latest .
-
-# Tag for OpenShift registry
-podman tag neuralbank/mcp-agent:latest \
-  image-registry.openshift-image-registry.svc:5000/neuralbank-mcp/mcp-agent:latest
-
-# Push to registry
-podman push image-registry.openshift-image-registry.svc:5000/neuralbank-mcp/mcp-agent:latest
-```
-
-Or use OpenShift BuildConfig:
+Ensure your uncommented code is committed:
 
 ```bash
-oc new-build --name=mcp-agent \
-  --strategy=docker \
-  --dockerfile=- \
-  --binary \
-  -n neuralbank-mcp
+# Check git status
+git status
 
-oc start-build mcp-agent --from-dir=. --follow
+# If there are uncommitted changes, commit them
+git add .
+git commit -m "Uncomment and configure MCP tools"
+git push
 ```
 
-### 2. Create Deployment
+### Step 2: Access LlamaStack Playground
 
-Apply the deployment configuration:
+1. **Navigate to Playground**:
+   <a href="https://llama-stack-playground-llama-stack.apps.<CLUSTER_DOMAIN>" target="_blank">https://llama-stack-playground-llama-stack.apps.<CLUSTER_DOMAIN></a>
 
-```bash
-oc apply -f k8s/deployment.yaml -n neuralbank-mcp
-```
+2. **Login**: Authenticate via Keycloak (see [Keycloak User Management](2.5-keycloak-user-management.md))
 
-### 3. Create Service
+![Neuralbank Home](../../images/neuralbank-home.png)
 
-Expose the MCP Agent internally:
+### Step 3: Select MCP Server
 
-```bash
-oc apply -f k8s/service.yaml -n neuralbank-mcp
-```
+1. **Open MCP Settings**: In Playground, navigate to MCP server configuration
+2. **Select customer-service-mcp**: Choose your service from the list
+3. **Verify Connection**: Ensure the service is connected and tools are available
 
-### 4. Create Route
+![Customer Service](../../images/customer-service.png)
 
-Expose the MCP Agent externally for frontend access:
+### Step 4: Test Query Tool
 
-```bash
-oc expose svc neuralbank-mcp-agent \
-  --name=neuralbank-mcp-agent \
-  --port=8080 \
-  -n neuralbank-mcp
-```
+Test the `query_credit_risk` tool:
 
-Or create a Route with TLS:
-
-```yaml
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: neuralbank-mcp-agent
-  namespace: neuralbank-mcp
-spec:
-  to:
-    kind: Service
-    name: neuralbank-mcp-agent
-  port:
-    targetPort: 8080
-  tls:
-    termination: edge
-    insecureEdgeTerminationPolicy: Redirect
-```
-
-## Frontend Integration
-
-The frontend (Playground) needs to connect to your MCP Agent. The commercial agent interface will use the MCP protocol to communicate.
-
-### Frontend Configuration
-
-Update the frontend configuration to point to your MCP Agent:
-
-```javascript
-// frontend/src/config/mcp.js
-export const MCP_CONFIG = {
-  serverUrl: 'https://neuralbank-mcp-agent-neuralbank-mcp.apps.<CLUSTER_DOMAIN>',
-  protocol: 'mcp',
-  tools: [
-    'query_credit_risk',
-    'update_credit_risk'
-  ]
-};
-```
-
-### Chat Interface Integration
-
-The Playground chat interface connects to the MCP Agent:
-
-```javascript
-// Example frontend integration
-import { MCPServer } from '@modelcontextprotocol/sdk';
-
-const mcpServer = new MCPServer({
-  url: MCP_CONFIG.serverUrl,
-  protocol: MCP_CONFIG.protocol
-});
-
-// Query credit risk
-async function queryCreditRisk(customerId) {
-  const result = await mcpServer.callTool('query_credit_risk', {
-    customer_id: customerId
-  });
-  return result;
-}
-
-// Update credit risk
-async function updateCreditRisk(customerId, loanAmount, loanPurpose) {
-  const result = await mcpServer.callTool('update_credit_risk', {
-    customer_id: customerId,
-    loan_amount: loanAmount,
-    loan_purpose: loanPurpose
-  });
-  return result;
-}
-```
-
-## Testing the Integration
-
-### 1. Verify Deployment
-
-Check that your MCP Agent is running:
-
-```bash
-# Check pods
-oc get pods -n neuralbank-mcp
-
-# Check service
-oc get svc -n neuralbank-mcp
-
-# Check route
-oc get route -n neuralbank-mcp
-```
-
-### 2. Test from Frontend
-
-1. **Open Playground**: Navigate to the commercial agent interface
-2. **Login**: Authenticate via Keycloak
-3. **Test Query**: 
+1. **Open Chat**: Start a new chat session in Playground
+2. **Query Credit Risk**: Type:
    ```
    "What is the credit risk for customer CUST-12345?"
    ```
-4. **Verify Response**: Should see credit risk information
-5. **Test Update**:
+3. **Review Response**: The MCP agent should return credit risk information
+
+### Step 5: Test Update Tool
+
+Test the `update_credit_risk` tool:
+
+1. **Update Request**: Type:
    ```
    "Update credit risk for customer CUST-12345 with a $50,000 home improvement loan"
    ```
-6. **Verify Update**: Should see updated risk level
+2. **Review Response**: Should show updated risk level
 
-### 3. Verify Risk Update
+![Update Risk Level](../../images/update-risk-level.png)
 
-After the commercial agent updates the risk:
+### Step 6: Verify Risk Update
+
+After updating the risk:
 
 1. **Query Again**: Ask for the same customer's risk
 2. **Confirm Change**: The risk level should reflect the update
-3. **Check Audit Trail**: Verify the update is logged
+3. **Check Audit Trail**: Verify the update is logged in OpenTelemetry
 
 ## End-to-End Flow
 
 Here's the complete flow:
 
 ```
-1. Commercial Agent (Frontend)
+1. Commercial Agent (Playground)
    │
    │ "Update credit risk for CUST-12345"
+   │ (Authenticated via Keycloak)
    │
    ▼
-2. Playground Chat Interface
+2. LlamaStack Playground
    │
    │ MCP Protocol Request
    │
    ▼
-3. MCP Agent (OpenShift)
+3. customer-service-mcp (DevSpaces/OpenShift)
    │
    │ Authenticate via Keycloak
    │ Call Credit Risk Service via Connectivity Link
@@ -206,12 +104,12 @@ Here's the complete flow:
    │ Update Database
    │
    ▼
-5. MCP Agent
+5. customer-service-mcp
    │
-   │ Return Updated Risk
+   │ Return Updated Risk via MCP
    │
    ▼
-6. Playground Chat Interface
+6. LlamaStack Playground
    │
    │ Display Result
    │
@@ -220,48 +118,66 @@ Here's the complete flow:
    "Credit risk updated from MEDIUM to LOW"
 ```
 
-## Monitoring Deployment
+## Testing from Playground
 
-Monitor your deployment:
+### Using Cursor in Playground
 
-```bash
-# Watch pods
-oc get pods -n neuralbank-mcp -w
+You can also use Cursor to interact with the MCP agent:
 
-# Check logs
-oc logs -f deployment/neuralbank-mcp-agent -n neuralbank-mcp
+![Cursor Prompt](../../images/cursor-prompt.png)
 
-# Check events
-oc get events -n neuralbank-mcp --sort-by='.lastTimestamp'
+1. **Open Cursor**: In your DevSpaces workspace or locally
+2. **Configure MCP**: Point Cursor to your `customer-service-mcp` service
+3. **Test Queries**: Ask Cursor to use MCP tools
+
+![Cursor Prompt 2](../../images/cursor-prompt-2.png)
+
+### Example Cursor Queries
+
+**Query Credit Risk**:
 ```
+"Use the customer-service-mcp to query credit risk for customer CUST-12345"
+```
+
+**Update Credit Risk**:
+```
+"Update credit risk for customer CUST-12345 with a $50,000 home improvement loan using customer-service-mcp"
+```
+
+## Monitoring Integration
+
+### View in OpenShift Topology
+
+1. **OpenShift Console**: Navigate to `neuralbank-mcp` project
+2. **Topology View**: See `customer-service-mcp` in the topology
+3. **Service Connections**: View how it connects to other services
+
+### View in OpenTelemetry
+
+See [OpenTelemetry Observability](6-opentelemetry.md) for details on viewing traces and logs.
 
 ## Troubleshooting
 
-### Common Issues
+### Service Not Available in Playground
 
-**Pod Not Starting**:
-- Check resource limits
-- Verify image pull secrets
-- Review pod logs
+- **Check Git Commit**: Ensure code is committed and pushed
+- **Verify Service Running**: Check if service is running in DevSpaces
+- **Check MCP Configuration**: Verify MCP server configuration
 
-**Service Not Accessible**:
-- Verify service selector matches pod labels
-- Check service port configuration
-- Test connectivity from another pod
+### Authentication Issues
 
-**Authentication Failures**:
-- Verify Keycloak configuration
-- Check token expiration
-- Validate client credentials
+- **Keycloak Login**: Ensure you're logged in via Keycloak
+- **Token Validity**: Check if tokens are expired
+- **User Permissions**: Verify user has required roles
 
-**Connectivity Link Issues**:
-- Verify Connectivity Link service is running
-- Check network policies
-- Validate service endpoints
+### Connectivity Link Issues
+
+- **Service Discovery**: Check if services are discoverable
+- **Network Policies**: Verify network policies allow communication
+- **Rate Limits**: Check if rate limits are being hit
 
 ## Next Steps
 
-Excellent! Your MCP Agent is deployed and integrated. Now let's set up **OpenTelemetry** to monitor distributed traces and ensure everything is working correctly.
+Excellent! Your `customer-service-mcp` is integrated with Playground. Now let's set up **OpenTelemetry** to monitor distributed traces and ensure everything is working correctly.
 
 Click **OpenTelemetry Observability** to continue.
-

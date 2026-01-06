@@ -1,6 +1,6 @@
 # 📊 OpenTelemetry Observability
 
-Observability is crucial for understanding how your MCP Agent performs in production. **OpenTelemetry** provides distributed tracing, metrics, and logs to help you monitor the entire system.
+Observability is crucial for understanding how your `customer-service-mcp` performs in production. **OpenTelemetry** provides distributed tracing, metrics, and logs to help you monitor the entire Neuralbank system.
 
 ## What is OpenTelemetry?
 
@@ -13,11 +13,38 @@ Observability is crucial for understanding how your MCP Agent performs in produc
 
 For Neuralbank, OpenTelemetry helps you:
 
-- **Track Requests**: See how requests flow from frontend → MCP Agent → Backend
+- **Track Requests**: See how requests flow from Playground → customer-service-mcp → Credit Risk Service
 - **Identify Bottlenecks**: Find slow operations
 - **Debug Issues**: Trace errors across services
 - **Monitor Performance**: Track response times and throughput
 - **Ensure Compliance**: Audit trail of all operations
+
+## Viewing Traces for customer-service-mcp
+
+The `customer-service-mcp` service is instrumented with OpenTelemetry. You can view traces and logs to understand how the service is performing.
+
+### Distributed Traces
+
+![OpenTelemetry customer-service-mcp Traces](../../images/optl-customer-service-mcp.png)
+
+The trace view shows:
+
+- **Service Name**: `customer-service-mcp`
+- **Operation**: MCP tool calls (query_credit_risk, update_credit_risk)
+- **Duration**: Time taken for each operation
+- **Spans**: Individual operations within a trace
+- **Dependencies**: Service-to-service calls via Connectivity Link
+
+### Service Logs
+
+![OpenTelemetry customer-service-mcp Logs](../../images/optl-customer-service-mcp-logs.png)
+
+The logs view provides:
+
+- **Structured Logs**: JSON-formatted log entries
+- **Trace Correlation**: Logs linked to trace IDs
+- **Error Details**: Stack traces and error messages
+- **Request Context**: Customer IDs, operation types, etc.
 
 ## Architecture
 
@@ -293,16 +320,41 @@ spec:
 EOF
 ```
 
-## Viewing Traces
+## Viewing Traces for customer-service-mcp
 
-### Access Jaeger UI
+The `customer-service-mcp` service is instrumented with OpenTelemetry. You can view traces and logs to understand how the service is performing.
 
-Navigate to Jaeger:
+### Distributed Traces
+
+![OpenTelemetry customer-service-mcp Traces](../../images/optl-customer-service-mcp.png)
+
+The trace view shows:
+
+- **Service Name**: `customer-service-mcp`
+- **Operation**: MCP tool calls (query_credit_risk, update_credit_risk)
+- **Duration**: Time taken for each operation
+- **Spans**: Individual operations within a trace
+- **Dependencies**: Service-to-service calls via Connectivity Link
+
+### Service Logs
+
+![OpenTelemetry customer-service-mcp Logs](../../images/optl-customer-service-mcp-logs.png)
+
+The logs view provides:
+
+- **Structured Logs**: JSON-formatted log entries
+- **Trace Correlation**: Logs linked to trace IDs
+- **Error Details**: Stack traces and error messages
+- **Request Context**: Customer IDs, operation types, etc.
+
+### Accessing OpenTelemetry UI
+
+Navigate to OpenTelemetry/Jaeger:
 <a href="https://jaeger-query-observability.apps.<CLUSTER_DOMAIN>" target="_blank">https://jaeger-query-observability.apps.<CLUSTER_DOMAIN></a>
 
 ### Query Traces
 
-1. **Select Service**: Choose `neuralbank-mcp-agent`
+1. **Select Service**: Choose `customer-service-mcp`
 2. **Select Operation**: Choose `update_credit_risk` or `query_credit_risk`
 3. **Set Time Range**: Select the time period
 4. **Click "Find Traces"**
@@ -310,7 +362,7 @@ Navigate to Jaeger:
 ### Understanding Trace Views
 
 **Trace Timeline**: See the complete request flow
-- Frontend → MCP Agent → Credit Risk Service → Database
+- Playground → customer-service-mcp → Credit Risk Service → Database
 - See duration of each span
 - Identify slow operations
 

@@ -11,6 +11,22 @@ For Neuralbank, MCP Agents serve as intelligent intermediaries that:
 - **Provide Transparency**: Maintain audit trails for compliance
 - **Accelerate Decisions**: Automate manual processes to speed up loan approvals
 
+## LlamaStack Overview
+
+**LlamaStack** is the open-source framework for building generative AI applications. It provides a comprehensive platform for deploying and managing LLMs, tools, agents, and MCP servers.
+
+![LlamaStack Overview](../../images/llama-stack.png)
+
+LlamaStack features:
+
+- **Multiple Model Support**: Chat with various LLM models (Llama, DeepSeek, etc.)
+- **RAG Capabilities**: Built-in vector database support for Retrieval Augmented Generation
+- **Tools and Agents**: Extensible tool system for custom functionality
+- **MCP Integration**: Native support for Model Context Protocol servers
+- **Playground Interface**: Interactive UI for testing and development
+
+The Neuralbank MCP Agent integrates with LlamaStack's Playground, allowing commercial agents to interact with the credit risk system through a chat interface.
+
 ## The Neuralbank MCP Agent
 
 The MCP Agent you'll build will:
@@ -21,16 +37,37 @@ The MCP Agent you'll build will:
 4. **Update Risk Levels**: Modifies credit risk based on loan request parameters
 5. **Return Results**: Provides updated information back to the commercial agent
 
+## Neuralbank Architecture
+
+The Neuralbank topology is already installed in your environment. Let's explore the architecture:
+
+![Neuralbank Topology](../../images/neuralbank-tology.png)
+
+The topology shows the complete system architecture including:
+
+- **Frontend Services**: Customer and commercial agent interfaces
+- **Authentication Layer**: Keycloak for identity management
+- **Backend Services**: Credit risk and loan management services
+- **Connectivity Link**: Service mesh for secure communication
+- **MCP Agent**: The `customer-service-mcp` service you'll develop
+
+![Neuralbank Topology with Connectivity Link](../../images/neuralbank-tology-connectivity-link.png)
+
 ## Architecture Flow
 
 ```
-Commercial Agent (Frontend)
+Commercial Agent (Frontend/Playground)
          │
          │ Chat Query: "Update credit risk for customer X"
+         │ (Authenticated via Keycloak)
          ▼
-    MCP Agent (OpenShift)
+    LlamaStack Playground
          │
-         │ Query Credit Risk Service
+         │ MCP Protocol Request
+         ▼
+    customer-service-mcp (OpenShift)
+         │
+         │ Query Credit Risk Service via Connectivity Link
          ▼
     Credit Risk Service (Backend)
          │
@@ -40,9 +77,13 @@ Commercial Agent (Frontend)
          │
          │ Return Updated Risk
          ▼
-    MCP Agent
+    customer-service-mcp
          │
-         │ Return Result
+         │ Return Result via MCP
+         ▼
+    LlamaStack Playground
+         │
+         │ Display Result
          ▼
 Commercial Agent (Frontend)
     "Credit risk updated successfully"
