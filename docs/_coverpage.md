@@ -2,8 +2,6 @@
 
 Welcome to **Red Hat OpenShift AI From Zero To Hero** - a comprehensive journey from business use case to production-ready AI solution.
 
-<img src="images/portada-team.png" alt="Red Hat OpenShift AI From Zero To Hero" class="cover-portada-image" />
-
 <style>
 .cover.show {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%) !important;
@@ -80,23 +78,6 @@ Welcome to **Red Hat OpenShift AI From Zero To Hero** - a comprehensive journey 
   border-left: 4px solid #CC0000;
 }
 
-.cover-portada-image {
-  max-width: 800px;
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5), 0 6px 24px rgba(204, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  object-fit: contain;
-  margin-top: 2rem;
-  z-index: 1;
-  position: relative;
-}
-
-.cover-portada-image:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.6), 0 8px 28px rgba(204, 0, 0, 0.4);
-}
 
 @keyframes subtleFade {
   0%, 100% {

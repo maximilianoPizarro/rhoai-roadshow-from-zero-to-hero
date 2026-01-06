@@ -1,5 +1,6 @@
 * [Cover](/)
 * [OpenShift AI Setup](0-getting-connected/README.md)
+  * [📋 Workshop Overview](0-getting-connected/0.5-workshop-overview.md)
   * [🏦 Neuralbank Business Case](0-getting-connected/0-business-case.md)
   * [🔌 Get Connected](0-getting-connected/1-get-connected.md)
   * [⚙️ Configure Environment](0-getting-connected/2-configure-environment.md)
@@ -21,4 +22,5 @@
   * [🛼 Optimize models](4-rhaiis/4-optimize-models.md)
   * [📚 Validated models](4-rhaiis/5-validated-models.md)
   * [🧹 Cleanup](4-rhaiis/6-cleanup.md)
+* [📚 Resources](6-resources/README.md)
 * [👥 About the Team](5-about-the-team/README.md)
