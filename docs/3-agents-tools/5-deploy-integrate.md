@@ -43,6 +43,14 @@ git push
 
 ![LlamaStack Playground](../images/llama-stack-playground.png)
 
+#### Before MCP Integration: Loan Rejected Scenario
+
+Before integrating the MCP service, loan requests cannot be automatically processed. When a commercial agent tries to process a loan, the system cannot access the credit risk information, resulting in loan rejection:
+
+![Loan Rejected](../images/loan-rejected.png)
+
+**Scenario**: A commercial agent attempts to process a loan for a customer, but without the MCP integration, the system cannot query or update credit risk information, leading to automatic rejection of the loan application.
+
 ### Step 3: Configure MCP Server
 
 1. **Open MCP Settings**: In Playground, navigate to MCP server configuration
@@ -87,6 +95,20 @@ After updating the risk:
 1. **Query Again**: Ask for the same customer's risk
 2. **Confirm Change**: The risk level should reflect the update
 3. **Check Audit Trail**: Verify the update is logged in OpenTelemetry
+
+#### After MCP Integration: Loan Approved Scenario
+
+After integrating the MCP service and invoking the risk update from Playground, the system can now automatically process loan requests. When a commercial agent processes a loan, the MCP service queries and updates the credit risk information, allowing for intelligent loan approval:
+
+![Loan Approved](../images/loan-approved.png)
+
+**Scenario**: A commercial agent processes a loan request for a customer through Playground. The MCP service:
+1. Queries the current credit risk for the customer
+2. Updates the risk level based on the loan details (amount, purpose, etc.)
+3. Returns the updated risk assessment
+4. The system approves the loan based on the improved risk profile
+
+This demonstrates the power of MCP integration: real-time credit risk management that enables faster, more accurate loan decisions.
 
 ## End-to-End Flow
 
