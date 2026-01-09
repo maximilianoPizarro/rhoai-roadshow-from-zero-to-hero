@@ -87,13 +87,12 @@
   <div class="team-name-form">
 
       <div class="team-inputs">
-        <label for="cdomain">Cluster Domain</label><br/>
-        <input type="text" id="cdomain" name="clusterdomain" placeholder="Your cluster domain..">
+        <input type="text" id="cdomain" name="clusterdomain" placeholder="Cluster Domain">
       </div>
 
       <div class="">
-        <button class="storage-btns" onclick="setNamesInStorage()">Save</button>
-        <button class="storage-btns" onclick="clearStorage()">Clear</button>
+        <button class="storage-btns storage-btns-save" onclick="setNamesInStorage()">Save</button>
+        <button class="storage-btns storage-btns-clear" onclick="clearStorage()">Clear</button>
       </div>
   </div>
 
@@ -132,8 +131,6 @@
         + '  src="images/redhatone.svg"'
         + '  width="300"'
         + '/>'
-        + '<br>'
-        + '<span style="color: #CC0000; font-weight: 600;">From Zero To Hero</span>'
       ), 
       repo: 'https://github.com/maximilianoPizarro/rhoai-roadshow-from-zero-to-hero',
       loadSidebar: true,
@@ -208,6 +205,7 @@
       width: 400px;
       font-family: "RedHatText", Overpass, "Open Sans", Helvetica, Arial, sans-serif;
       font-size: 14px;
+      margin-top: 0;
     }
     input[type=text]:focus {
       outline: none !important;
@@ -249,32 +247,41 @@
     .team-inputs:first-child {
       /* margin-right: 30%; */
     }
-    .team-inputs label {
-      font-size: 14px;
-      display: block;
-      margin-bottom: 5px;
-      font-family: "RedHatText", Overpass, "Open Sans", Helvetica, Arial, sans-serif;
-    }
     .storage-btns {
       font-size: 14px;
       margin: 10px;
       padding: 8px 16px;
       cursor: pointer;
-      background-color: #E8E8E8;
-      color: #333;
-      border: 1px solid #CCCCCC; 
       width: 130px; 
       text-align: center;
       font-family: "RedHatText", Overpass, "Open Sans", Helvetica, Arial, sans-serif;
       border-radius: 4px;
       transition: background-color 0.2s ease, border-color 0.2s ease;
+      border: 1px solid transparent;
+      color: white;
+      font-weight: 500;
     }
-    .storage-btns:hover {
-      background-color: #D8D8D8;
-      border-color: #999;
+    .storage-btns-save {
+      background-color: #0066CC;
+      border-color: #0066CC;
     }
-    .storage-btns:active {
-      background-color: #C8C8C8;
+    .storage-btns-save:hover {
+      background-color: #0052A3;
+      border-color: #0052A3;
+    }
+    .storage-btns-save:active {
+      background-color: #003D7A;
+    }
+    .storage-btns-clear {
+      background-color: #CC0000;
+      border-color: #CC0000;
+    }
+    .storage-btns-clear:hover {
+      background-color: #A30000;
+      border-color: #A30000;
+    }
+    .storage-btns-clear:active {
+      background-color: #800000;
     }
     .slider {
       width: 67em;
