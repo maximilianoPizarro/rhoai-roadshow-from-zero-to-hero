@@ -105,7 +105,6 @@ The template generates a Quarkus-based MCP server with:
 - **Integration Layer**: Connectivity Link and Keycloak integration
 - **OpenTelemetry**: Pre-configured observability
 
-![Quarkus MCP Server](../images/quarkus-mcp-server.png)
 
 ## What Gets Generated
 

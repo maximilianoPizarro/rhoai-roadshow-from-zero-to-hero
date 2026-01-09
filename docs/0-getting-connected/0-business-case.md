@@ -66,5 +66,5 @@ By the end of this journey, you will have:
 
 ## Next Steps
 
-Ready to begin? Let's start by [configuring your environment](2-configure-environment) to access OpenShift AI.
+Ready to begin? Let's start by [configuring your environment](0-getting-connected/2-configure-environment) to access OpenShift AI.
 
