@@ -38,10 +38,14 @@ git push
 
 ![Neuralbank Home](../images/neuralbank-home.png)
 
-### Step 3: Select MCP Server
+### Step 3: Configure MCP Server
 
 1. **Open MCP Settings**: In Playground, navigate to MCP server configuration
-2. **Select customer-service-mcp**: Choose your service from the list
+2. **Configure customer-service-mcp**: 
+   - **Name**: `customer-service-mcp`
+   - **Endpoint**: `http://customer-service-mcp.neuralbank.svc.cluster.local:8081/mcp/sse`
+   - **Protocol**: HTTP (SSE - Server-Sent Events)
+   - **Port**: 8081
 3. **Verify Connection**: Ensure the service is connected and tools are available
 
 ![Customer Service](../images/customer-service.png)
@@ -128,6 +132,9 @@ You can also use Cursor to interact with the MCP agent:
 
 1. **Open Cursor**: In your DevSpaces workspace or locally
 2. **Configure MCP**: Point Cursor to your `customer-service-mcp` service
+   - **Endpoint**: `http://customer-service-mcp.neuralbank.svc.cluster.local:8081/mcp/sse`
+   - **Protocol**: HTTP (SSE)
+   - **Port**: 8081
 3. **Test Queries**: Ask Cursor to use MCP tools
 
 ![Cursor Prompt 2](../images/cursor-prompt-2.png)
@@ -143,6 +150,40 @@ You can also use Cursor to interact with the MCP agent:
 ```
 "Update credit risk for customer CUST-12345 with a $50,000 home improvement loan using customer-service-mcp"
 ```
+
+## CI/CD Pipeline
+
+The generated project includes a CI/CD pipeline that automates the deployment of the MCP service. The pipeline uses **OpenShift Pipelines** (Tekton) for:
+
+- **Build**: Compiles and packages the Quarkus application
+- **Test**: Runs unit and integration tests
+- **Container Image**: Builds and pushes container images to Quay
+- **Deploy**: Deploys to OpenShift using the generated Kubernetes manifests
+
+![Customer Service CI](../images/customer-service-ci.png)
+
+**OpenShift Pipelines** provides a cloud-native CI/CD solution that runs directly on your OpenShift cluster. The pipeline is defined in Tekton format and can be viewed in:
+- GitLab CI/CD section
+- OpenShift Console → Pipelines
+- The generated pipeline definitions in the project
+
+You can explore the CI/CD configuration in the project repository or view it in GitLab's CI/CD section.
+
+## GitOps with ArgoCD
+
+The `customer-service-mcp` service can also be deployed using **GitOps** principles with **ArgoCD**. This provides declarative infrastructure management and automated synchronization.
+
+![Customer Service ArgoCD](../images/customer-service-cd.png)
+
+### Viewing GitOps Configuration
+
+To view the GitOps configuration for the MCP service:
+
+- **ArgoCD Console**: Navigate to ArgoCD in your cluster to see the application
+- **Git Repository**: View the GitOps manifests in the repository
+- **Application Status**: Monitor deployment status and sync state in ArgoCD
+
+?> **Note**: The GitOps configuration for the MCP service is available in the repository. You can explore it to understand how the service is managed declaratively.
 
 ## Monitoring Integration
 

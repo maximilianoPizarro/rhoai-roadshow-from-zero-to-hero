@@ -64,7 +64,34 @@ By the end of this journey, you will have:
 ✅ Full observability with OpenTelemetry traces  
 ✅ Understanding of best practices for AI/ML on OpenShift  
 
+## Platform Services
+
+The following services are available in your environment. **Note**: The basename (cluster domain) is set using the **Cluster Domain** field in the top navigation bar. Click `Save` to update all links.
+
+### Single Sign-On (SSO)
+
+- **URL**: <a href="https://sso.apps.<CLUSTER_DOMAIN>" target="_blank">https://sso.apps.<CLUSTER_DOMAIN></a>
+- **Access**: Use your OpenShift credentials
+
+### GitLab
+
+- **URL**: <a href="https://gitlab-gitlab.apps.<CLUSTER_DOMAIN>" target="_blank">https://gitlab-gitlab.apps.<CLUSTER_DOMAIN></a>
+- **Users**:
+  - `root` / `backstage`
+  - `pe1` / `backstage`
+  - `pe2` / `backstage`
+  - `pe3` / `backstage`
+  - `dev1` / `backstage`
+  - `dev2` / `backstage`
+  - `dev3` / `backstage`
+
+### Quay Container Registry
+
+- **URL**: <a href="https://quay.apps.<CLUSTER_DOMAIN>" target="_blank">https://quay.apps.<CLUSTER_DOMAIN></a>
+- **Users**:
+  - `quayadmin` / `backstage`
+
 ## Next Steps
 
-Ready to begin? Let's start by [getting connected](1-get-connected.md) to your OpenShift AI environment.
+Ready to begin? Let's start by [configuring your environment](2-configure-environment) to access OpenShift AI.
 

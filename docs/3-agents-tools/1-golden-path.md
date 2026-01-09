@@ -23,9 +23,11 @@ For Kevin (and you), the Golden Path means you can:
 ### Accessing Developer Hub
 
 1. Navigate to the Developer Hub:
-   <a href="https://developer-hub-developer-hub.apps.<CLUSTER_DOMAIN>" target="_blank">https://developer-hub-developer-hub.apps.<CLUSTER_DOMAIN></a>
+   <a href="https://backstage-developer-hub-backstage.apps.<CLUSTER_DOMAIN>" target="_blank">https://backstage-developer-hub-backstage.apps.<CLUSTER_DOMAIN></a>
 
-2. You'll see a catalog of available Software Templates
+2. **User**: Use `dev1` / `backstage` for the remaining activities
+
+3. You'll see a catalog of available Software Templates
 
 ![Developer Hub](../images/developer-hub.png)
 
@@ -140,7 +142,9 @@ customer-service-mcp/
 └── .gitignore
 ```
 
-This structure matches the [Quarkus MCP Template Skeleton](https://github.com/panchoraposo/rh1-demo/tree/main/software-templates/quarkus-mcp-template/skeleton) used by the Platform Engineering team.
+This structure matches the Quarkus MCP Template Skeleton used by the Platform Engineering team. You can view the template source code in GitLab:
+- **Template YAML**: <a href="https://gitlab-gitlab.apps.<CLUSTER_DOMAIN>/platform-engineers/developer-hub/-/blob/main/software-templates/quarkus-mcp-template/template.yaml" target="_blank">Template Definition</a>
+- **Skeleton Structure**: <a href="https://gitlab-gitlab.apps.<CLUSTER_DOMAIN>/platform-engineers/developer-hub/-/tree/main/software-templates/quarkus-mcp-template/skeleton" target="_blank">Skeleton Source Code</a>
 
 ## Important: Code is Pre-configured
 
@@ -154,19 +158,6 @@ The generated code includes **commented-out sections** that Kevin needs to uncom
 1. Uncomment the relevant code sections
 2. Review and understand the implementation
 3. Commit the changes to start working with Cursor and Playground
-
-## CI/CD Pipeline
-
-The generated project includes a CI/CD pipeline that automates:
-
-- **Build**: Compiles and packages the Quarkus application
-- **Test**: Runs unit and integration tests
-- **Container Image**: Builds and pushes container images to Quay
-- **Deploy**: Deploys to OpenShift using the generated Kubernetes manifests
-
-![Customer Service CI](../images/customer-service-ci.png)
-
-You can explore the CI/CD configuration in the `.github/workflows/` directory or view it in GitLab's CI/CD section.
 
 ## Next Steps
 

@@ -51,6 +51,19 @@ The Helm chart includes:
 - Nginx proxy configuration
 - All required dependencies
 
+#### Neuralbank Topology
+
+The complete Neuralbank architecture topology deployed via Helm:
+
+![Neuralbank Topology](../images/neuralbank-tology.png)
+
+The topology shows the complete system architecture including:
+- **Frontend Services**: Customer and commercial agent interfaces
+- **Authentication Layer**: Keycloak for identity management
+- **Backend Services**: Credit risk and loan management services
+- **Connectivity Link**: Service mesh for secure communication
+- **MCP Agent**: The `customer-service-mcp` service
+
 ### GitOps with ArgoCD
 
 Alternative installation path using GitOps principles with ArgoCD for declarative infrastructure management.

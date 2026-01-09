@@ -43,11 +43,7 @@ The MCP Agent you'll build will:
 
 ## Neuralbank Architecture
 
-The Neuralbank topology is already installed in your environment. Let's explore the architecture:
-
-![Neuralbank Topology](../images/neuralbank-tology.png)
-
-The topology shows the complete system architecture including:
+The Neuralbank topology is already installed in your environment. The complete architecture includes:
 
 - **Frontend Services**: Customer and commercial agent interfaces
 - **Authentication Layer**: Keycloak for identity management
@@ -56,6 +52,8 @@ The topology shows the complete system architecture including:
 - **MCP Agent**: The `customer-service-mcp` service you'll develop
 
 ![Neuralbank Topology with Connectivity Link](../images/neuralbank-tology-connectivity-link.png)
+
+?> **Note**: The complete Neuralbank topology diagram is available in the [Resources section](6-resources/README) under Helm Chart deployment.
 
 ## Architecture Flow
 

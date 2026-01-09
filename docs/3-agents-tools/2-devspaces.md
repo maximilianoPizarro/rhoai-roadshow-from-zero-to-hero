@@ -19,12 +19,25 @@ For Kevin, DevSpaces means you can:
 
 The Golden Path template automatically creates a DevSpaces workspace configuration. Here's how to access it:
 
-### Step 1: Navigate to DevSpaces
+### Step 1: Access from Developer Hub
+
+The easiest way to open your DevSpaces workspace is directly from Developer Hub:
+
+1. **Navigate to Developer Hub**: <a href="https://backstage-developer-hub-backstage.apps.<CLUSTER_DOMAIN>" target="_blank">https://backstage-developer-hub-backstage.apps.<CLUSTER_DOMAIN></a>
+2. **Find Your Component**: Look for the `customer-service-mcp` component
+3. **Open DevSpaces**: Click on the DevSpaces link or use the direct URL:
+   <a href="https://devspaces.apps.<CLUSTER_DOMAIN>/#https://gitlab-gitlab.apps.<CLUSTER_DOMAIN>/developers/customer-service-mcp" target="_blank">Open DevSpaces for customer-service-mcp</a>
+
+This will automatically open a DevSpaces workspace with the `customer-service-mcp` repository cloned and ready to work.
+
+### Step 2: Alternative Access Methods
+
+You can also access DevSpaces through:
 
 1. **From OpenShift Console**: Go to **Applications** → **Red Hat DevSpaces**
-2. **Or access directly**: <a href="https://devspaces-<CLUSTER_DOMAIN>" target="_blank">https://devspaces-<CLUSTER_DOMAIN></a>
+2. **Direct URL**: <a href="https://devspaces.apps.<CLUSTER_DOMAIN>" target="_blank">https://devspaces.apps.<CLUSTER_DOMAIN></a>
 
-### Step 2: Open Your Workspace
+### Step 3: Open Your Workspace
 
 1. **Find Your Workspace**: Look for a workspace named `customer-service-mcp`
 2. **Click to Open**: This will launch your development environment
@@ -36,6 +49,12 @@ The workspace will automatically:
 - Start all required containers
 - Configure the development environment
 - Install necessary tools and dependencies
+
+![DevSpaces Workspaces](../images/devspaces-workspaces.png)
+
+![DevSpaces Initialization](../images/devspaces-init.png)
+
+![DevSpaces Running](../images/devspaces-running.png)
 
 ## Workspace Features
 
@@ -77,6 +96,43 @@ In your DevSpaces workspace:
 5. **Test**: Execute unit and integration tests
 6. **Run Locally**: Use Quarkus dev mode for local testing
 7. **Commit Changes**: Commit your uncommented code to start working
+
+![DevSpaces Build](../images/devspaces-build.png)
+
+## Preview MCP Service
+
+To preview and test the MCP service locally in your DevSpaces workspace:
+
+1. **Open Terminal**: Open a terminal in your DevSpaces workspace
+
+2. **Navigate to Project**: 
+   ```bash
+   cd customer-service-mcp
+   ```
+
+3. **Check README**: Review the README.md file for specific commands:
+   ```bash
+   cat README.md
+   ```
+
+![DevSpaces README](../images/devspaces-readme.png)
+
+4. **Run MCP Service**: Execute the commands from the README to start the MCP service in development mode. Typically:
+   ```bash
+   mvn quarkus:dev
+   ```
+
+5. **Access MCP Endpoint**: The MCP service will be available at:
+   - **Endpoint**: `http://localhost:8081/mcp/sse`
+   - **Protocol**: HTTP
+   - **Port**: 8081
+
+6. **Test MCP Connection**: You can test the MCP endpoint using curl or MCP Inspector:
+   ```bash
+   curl http://localhost:8081/mcp/sse
+   ```
+
+?> **Tip**: The MCP service uses Server-Sent Events (SSE) for real-time communication. Make sure to configure your MCP client (like Playground or Cursor) to use `http://localhost:8081/mcp/sse` when testing locally in DevSpaces.
 
 ## Working with the Generated Code
 

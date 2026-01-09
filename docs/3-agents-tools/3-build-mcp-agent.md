@@ -243,8 +243,8 @@ With Quarkus dev mode running:
 # Test health endpoint
 curl http://localhost:8080/health
 
-# Test MCP endpoint (if exposed)
-curl http://localhost:8080/mcp/tools
+# Test MCP endpoint (SSE)
+curl http://localhost:8081/mcp/sse
 ```
 
 ### Integration Testing

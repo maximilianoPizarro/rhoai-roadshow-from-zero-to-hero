@@ -35,8 +35,8 @@ In MCP Inspector:
 1. **Add Server**: Click "Add MCP Server"
 2. **Enter Details**:
    - **Name**: `neuralbank-credit-risk`
-   - **URL**: `http://customer-service-mcp.neuralbank.svc.cluster.local:8080`
-   - **Protocol**: `MCP`
+   - **URL**: `http://customer-service-mcp.neuralbank.svc.cluster.local:8081/mcp/sse`
+   - **Protocol**: `MCP` (SSE - Server-Sent Events)
 
 3. **Connect**: Click "Connect"
 
