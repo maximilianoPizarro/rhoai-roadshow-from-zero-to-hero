@@ -252,73 +252,7 @@ public class CreditRiskTool {
 }
 ```
 
-## Deploying OpenTelemetry Collector
-
-### 1. Install OpenTelemetry Operator
-
-```bash
-oc apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/latest/download/opentelemetry-operator.yaml
-```
-
-### 2. Create Collector Configuration
-
-```yaml
-apiVersion: opentelemetry.io/v1alpha1
-kind: OpenTelemetryCollector
-metadata:
-  name: otel-collector
-  namespace: observability
-spec:
-  config: |
-    receivers:
-      otlp:
-        protocols:
-          grpc:
-            endpoint: 0.0.0.0:4317
-          http:
-            endpoint: 0.0.0.0:4318
-    
-    processors:
-      batch:
-      resource:
-        attributes:
-          - key: service.name
-            value: customer-service-mcp
-            action: upsert
-    
-    exporters:
-      jaeger:
-        endpoint: jaeger-collector.observability.svc.cluster.local:14250
-        tls:
-          insecure: true
-      logging:
-        loglevel: debug
-    
-    service:
-      pipelines:
-        traces:
-          receivers: [otlp]
-          processors: [batch, resource]
-          exporters: [jaeger, logging]
-```
-
-### 3. Deploy Jaeger (Observability Backend)
-
-```bash
-oc apply -f - <<EOF
-apiVersion: jaegertracing.io/v1
-kind: Jaeger
-metadata:
-  name: jaeger
-  namespace: observability
-spec:
-  strategy: production
-  storage:
-    type: elasticsearch
-    elasticsearch:
-      nodeCount: 1
-EOF
-```
+?> **Note**: The OpenTelemetry Operator is already installed in the environment. You can proceed directly to viewing traces.
 
 ## Viewing Traces for customer-service-mcp
 

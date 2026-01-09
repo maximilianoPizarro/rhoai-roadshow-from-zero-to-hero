@@ -1,6 +1,6 @@
 # 🤖 Deploy & Integrate
 
-Now that your `customer-service-mcp` is built and tested in DevSpaces, let's integrate it with LlamaStack Playground so commercial agents can use it.
+Now that your `customer-service-mcp` is built and tested in DevSpaces, let's integrate it with Playground (via OpenShift AI) so commercial agents can use it.
 
 ## Development Approach
 
@@ -11,9 +11,9 @@ Now that your `customer-service-mcp` is built and tested in DevSpaces, let's int
 - **Integrated via Git**: Committed code is automatically available to Playground
 - **Runtime in OpenShift**: The service runs automatically when accessed via Playground
 
-## Integration with LlamaStack Playground
+## Integration with Playground
 
-The `customer-service-mcp` integrates with LlamaStack Playground, allowing commercial agents to interact with the credit risk system through a chat interface.
+The `customer-service-mcp` integrates with Playground (via OpenShift AI), allowing commercial agents to interact with the credit risk system through a chat interface.
 
 ### Step 1: Verify Service is Committed
 
@@ -29,14 +29,19 @@ git commit -m "Uncomment and configure MCP tools"
 git push
 ```
 
-### Step 2: Access LlamaStack Playground
+### Step 2: Access Playground via OpenShift AI
 
-1. **Navigate to Playground**:
-   <a href="https://llama-stack-playground-llama-stack.apps.<CLUSTER_DOMAIN>" target="_blank">https://llama-stack-playground-llama-stack.apps.<CLUSTER_DOMAIN></a>
+1. **Navigate to OpenShift AI Console**:
+   <a href="https://console-openshift-console.apps.<CLUSTER_DOMAIN>" target="_blank">https://console-openshift-console.apps.<CLUSTER_DOMAIN></a>
+   - Login with `admin` / `Welcome123`
 
-2. **Login**: Authenticate via Keycloak (see [Keycloak User Management](2.5-keycloak-user-management.md))
+2. **Access Playground**:
+   - Navigate to **OpenShift AI** → **Playground**
+   - Or directly access: <a href="https://llama-stack-playground-llama-stack.apps.<CLUSTER_DOMAIN>" target="_blank">https://llama-stack-playground-llama-stack.apps.<CLUSTER_DOMAIN></a>
 
-![Neuralbank Home](../images/neuralbank-home.png)
+3. **Login**: Authenticate via Keycloak (see [Keycloak User Management](2.5-keycloak-user-management.md))
+
+![LlamaStack Playground](../images/llama-stack-playground.png)
 
 ### Step 3: Configure MCP Server
 
@@ -47,6 +52,8 @@ git push
    - **Protocol**: HTTP (SSE - Server-Sent Events)
    - **Port**: 8081
 3. **Verify Connection**: Ensure the service is connected and tools are available
+
+![LlamaStack MCP Configuration](../images/llama-stack-mcp-configuration.png)
 
 ![Customer Service](../images/customer-service.png)
 
@@ -92,7 +99,7 @@ Here's the complete flow:
    │ (Authenticated via Keycloak)
    │
    ▼
-2. LlamaStack Playground
+2. Playground (OpenShift AI)
    │
    │ MCP Protocol Request
    │
@@ -113,7 +120,7 @@ Here's the complete flow:
    │ Return Updated Risk via MCP
    │
    ▼
-6. LlamaStack Playground
+6. Playground (OpenShift AI)
    │
    │ Display Result
    │
@@ -136,6 +143,8 @@ You can also use Cursor to interact with the MCP agent:
    - **Protocol**: HTTP (SSE)
    - **Port**: 8081
 3. **Test Queries**: Ask Cursor to use MCP tools
+
+![Cursor Fetch Customer Service](../images/cursor-fetch-customer-service.png)
 
 ![Cursor Prompt 2](../images/cursor-prompt-2.png)
 
