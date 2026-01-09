@@ -1,5 +1,9 @@
 # 🎯 Introduction to MCP Agents
 
+?> **Access Note**: To access the OpenShift console and observe the architecture, authenticate using:
+- **Username**: `admin`
+- **Password**: `Welcome123`
+
 ## What is MCP?
 
 **Model Context Protocol (MCP)** is an open protocol that enables AI assistants to securely access external data sources and tools. MCP servers provide a standardized way for AI applications to interact with various services, databases, and APIs.

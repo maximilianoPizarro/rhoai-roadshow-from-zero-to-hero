@@ -1,5 +1,7 @@
 # About the Team
 
+Welcome to **IA Development From Zero To Hero** - a comprehensive journey from business use case to production-ready AI solution.
+
 We would like to extend our heartfelt gratitude to everyone who participated in making this journey possible.
 
 ## Thank You!
@@ -18,7 +20,6 @@ Through this journey, we've covered:
 
 - ✅ **OpenShift AI Setup** - Getting connected and configuring environments
 - ✅ **MCP Agents** - Building and deploying intelligent agents for Neuralbank
-- ✅ **Models** - Working with Red Hat AI Inference Server (RHAIIS)
 - ✅ **Observability** - Monitoring with OpenTelemetry distributed traces
 
 ## Special Thanks

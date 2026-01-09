@@ -1,6 +1,6 @@
-# Red Hat OpenShift AI From Zero To Hero
+# IA Development From Zero To Hero
 
-Welcome to **Red Hat OpenShift AI From Zero To Hero** - a comprehensive journey from business use case to production-ready AI solution.
+Welcome to **IA Development From Zero To Hero** - a comprehensive journey from business use case to production-ready AI solution.
 
 ## Business Use Case
 
@@ -48,8 +48,7 @@ This journey covers:
 
 1. **OpenShift AI Setup** - Getting connected and configuring your environment
 2. **MCP Agents** - Building and deploying agents for credit risk management
-3. **Models** - Working with Red Hat AI Inference Server (RHAIIS) for model serving
-4. **Observability** - Monitoring with OpenTelemetry distributed traces
+3. **Observability** - Monitoring with OpenTelemetry distributed traces
 
 Let's begin your journey from zero to hero!
 

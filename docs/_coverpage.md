@@ -1,7 +1,5 @@
 # From Zero To Hero
 
-Welcome to **Red Hat OpenShift AI From Zero To Hero** - a comprehensive journey from business use case to production-ready AI solution.
-
 <style>
 .cover.show {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%) !important;

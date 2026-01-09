@@ -471,7 +471,6 @@ Your MCP Agent is now production-ready and helping Neuralbank accelerate credit 
 
 ## Continue Your Journey
 
-✅ **Next**: [Models - RHAIIS](4-rhaiis/README) - Learn about Red Hat AI Inference Server  
 📚 **Resources**: [Additional Resources](6-resources/README) - Source code, installation methods, and more  
 👥 **About**: [About the Team](5-about-the-team/README) - Thank you for participating!
 

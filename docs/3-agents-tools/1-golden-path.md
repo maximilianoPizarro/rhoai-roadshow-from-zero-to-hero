@@ -50,6 +50,10 @@ The Platform Engineering team has created a specific template for Neuralbank MCP
 
 ![Quarkus MCP Template](../images/quarkus-mcp-template.png)
 
+3. **View Template Source** (Optional): You can review the template definition in GitLab:
+   - **URL**: <a href="https://gitlab-gitlab.apps.<CLUSTER_DOMAIN>/platform-engineers/developer-hub/-/blob/main/software-templates/quarkus-mcp-template/template.yaml" target="_blank">Template YAML</a>
+   - **Access**: Login as `root` / `backstage` to view the template source code
+
 ### Step 2: Create from Template
 
 1. **Click on Template**: Select the "Quarkus MCP Server" template
@@ -59,12 +63,9 @@ The Platform Engineering team has created a specific template for Neuralbank MCP
    - **Project Name**: `neuralbank-mcp`
    - **Git Repository**: Your repository URL (or leave default)
    - **Namespace**: `neuralbank-mcp`
+   - **User**: Use `dev1` / `backstage` for the remaining activities
 
 ![Customer Service MCP Template](../images/customer-service-mcp-template.png)
-
-3. **Review Configuration**: The template will show you what will be generated
-
-![Customer Service MCP Template Review](../images/customer-service-mcp-template-review.png)
 
 ### Step 3: Generate the Project
 
@@ -81,7 +82,19 @@ The Platform Engineering team has created a specific template for Neuralbank MCP
 
 ![Customer Service MCP Template 3](../images/customer-service-mcp-template-3.png)
 
+![Customer Service MCP Template Run](../images/customer-service-mcp-template-run.png)
+
 ### Step 4: Review Generated Code
+
+1. **Review Configuration**: The template will show you what will be generated
+
+![Customer Service MCP Template Review](../images/customer-service-mcp-template-review.png)
+
+2. **View in Developer Hub**: After generation, you can view the component in Developer Hub
+
+3. **View Code in GitLab**: The generated code is available in GitLab for review and development
+
+![Customer Service GitLab](../images/customer-service-gitlab.png)
 
 The template generates a Quarkus-based MCP server with:
 
@@ -94,7 +107,7 @@ The template generates a Quarkus-based MCP server with:
 
 ## What Gets Generated
 
-The Golden Path template generates:
+The Golden Path template generates a structure based on the Quarkus MCP archetype. The generated project follows this structure:
 
 ```
 customer-service-mcp/
@@ -111,10 +124,14 @@ customer-service-mcp/
 │   │       ├── application.properties
 │   │       └── mcp-config.yaml
 │   └── test/
+│       └── java/
+│           └── com/neuralbank/mcp/
+│               └── ...
 ├── .devcontainer/
 │   └── devcontainer.json
 ├── .github/
 │   └── workflows/
+│       └── ci-cd.yml
 ├── k8s/
 │   ├── deployment.yaml
 │   └── service.yaml
@@ -122,6 +139,8 @@ customer-service-mcp/
 ├── README.md
 └── .gitignore
 ```
+
+This structure matches the [Quarkus MCP Template Skeleton](https://github.com/panchoraposo/rh1-demo/tree/main/software-templates/quarkus-mcp-template/skeleton) used by the Platform Engineering team.
 
 ## Important: Code is Pre-configured
 
@@ -135,6 +154,19 @@ The generated code includes **commented-out sections** that Kevin needs to uncom
 1. Uncomment the relevant code sections
 2. Review and understand the implementation
 3. Commit the changes to start working with Cursor and Playground
+
+## CI/CD Pipeline
+
+The generated project includes a CI/CD pipeline that automates:
+
+- **Build**: Compiles and packages the Quarkus application
+- **Test**: Runs unit and integration tests
+- **Container Image**: Builds and pushes container images to Quay
+- **Deploy**: Deploys to OpenShift using the generated Kubernetes manifests
+
+![Customer Service CI](../images/customer-service-ci.png)
+
+You can explore the CI/CD configuration in the `.github/workflows/` directory or view it in GitLab's CI/CD section.
 
 ## Next Steps
 
