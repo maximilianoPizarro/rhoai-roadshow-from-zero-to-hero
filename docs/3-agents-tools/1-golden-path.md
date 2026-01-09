@@ -84,8 +84,6 @@ The Platform Engineering team has created a specific template for Neuralbank MCP
 
 ![Customer Service MCP Template 3](../images/customer-service-mcp-template-3.png)
 
-![Customer Service MCP Template Run](../images/customer-service-mcp-template-run.png)
-
 ### Step 4: Review Generated Code
 
 1. **Review Configuration**: The template will show you what will be generated
@@ -93,6 +91,8 @@ The Platform Engineering team has created a specific template for Neuralbank MCP
 ![Customer Service MCP Template Review](../images/customer-service-mcp-template-review.png)
 
 2. **View in Developer Hub**: After generation, you can view the component in Developer Hub
+
+![Customer Service MCP Template Run](../images/customer-service-mcp-template-run.png)
 
 3. **View Code in GitLab**: The generated code is available in GitLab for review and development
 
@@ -110,6 +110,20 @@ The template generates a Quarkus-based MCP server with:
 ## What Gets Generated
 
 The Golden Path template generates a structure based on the Quarkus MCP archetype. The generated project follows this structure:
+
+![Quarkus MCP Server](../images/quarkus-mcp-server.png)
+
+### Quarkus MCP Extension
+
+The generated project uses the **Quarkus MCP Extension** (`quarkus-mcp`), which provides:
+
+- **MCP Protocol Support**: Native implementation of the Model Context Protocol
+- **Server-Sent Events (SSE)**: Real-time communication via `/mcp/sse` endpoint
+- **Tool Registration**: Automatic discovery and registration of `@Tool` annotated methods
+- **Resource Management**: Built-in support for MCP resources and prompts
+- **Integration**: Seamless integration with Quarkus ecosystem (REST Client, CDI, etc.)
+
+The extension automatically configures the MCP server endpoint at `http://localhost:8081/mcp/sse` when running in development mode, and exposes it on port 8081 in production deployments.
 
 ```
 customer-service-mcp/

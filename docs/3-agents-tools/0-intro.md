@@ -1,6 +1,7 @@
 # 🎯 Introduction to MCP Agents
 
 ?> **Access Note**: To access the OpenShift console and observe the architecture, authenticate using:
+- **OpenShift Console**: <a href="https://console-openshift-console.apps.<CLUSTER_DOMAIN>" target="_blank">https://console-openshift-console.apps.<CLUSTER_DOMAIN></a>
 - **Username**: `admin`
 - **Password**: `Welcome123`
 

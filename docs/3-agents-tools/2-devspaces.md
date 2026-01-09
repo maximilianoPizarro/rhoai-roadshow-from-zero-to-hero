@@ -58,32 +58,14 @@ The workspace will automatically:
 
 ## Workspace Features
 
-Your DevSpaces workspace includes:
+Your DevSpaces workspace includes the following features:
 
-### Integrated Terminal
-- Access to OpenShift CLI (`oc`)
-- Direct access to cluster resources
-- Run build and test commands
-- Git operations
-
-### Code Editor
-- Full IDE experience in the browser
-- IntelliSense and code completion
-- Git integration
-- Extension support
-- Multi-file editing
-
-### Port Forwarding
-- Access services running in the cluster
-- Test MCP Agent endpoints locally
-- Connect to databases
-- Debug running applications
-
-### Volume Mounts
-- Persistent storage for your code
-- Shared volumes between containers
-- ConfigMap and Secret mounts
-- Workspace data persistence
+| Feature | Description |
+|---------|-------------|
+| **Integrated Terminal** | Access to OpenShift CLI (`oc`), direct access to cluster resources, run build and test commands, Git operations |
+| **Code Editor** | Full IDE experience in the browser, IntelliSense and code completion, Git integration, extension support, multi-file editing |
+| **Port Forwarding** | Access services running in the cluster, test MCP Agent endpoints locally, connect to databases, debug running applications |
+| **Volume Mounts** | Persistent storage for your code, shared volumes between containers, ConfigMap and Secret mounts, workspace data persistence |
 
 ## Development Workflow
 

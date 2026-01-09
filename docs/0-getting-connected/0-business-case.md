@@ -30,8 +30,6 @@ To solve this challenge, Neuralbank is implementing an **MCP (Model Context Prot
 
 The Neuralbank topology is already installed in your environment. The complete architecture includes:
 
-![Neuralbank Topology](../images/neuralbank-tology.png)
-
 Neuralbank's infrastructure includes:
 
 - **Frontend Layer**: Customer Portal and Commercial Agent Interface (Playground)
@@ -39,7 +37,7 @@ Neuralbank's infrastructure includes:
 - **Backend Services**: Java-based services including Credit Risk Service and MCP Agent
 - **Connectivity Link**: Service mesh for secure service-to-service communication
 
-![Neuralbank Topology with Connectivity Link](../images/neuralbank-tology-connectivity-link.png)
+?> **Note**: The complete Neuralbank topology diagrams are available later in this journey when you explore the architecture in detail.
 
 ## Your Role as Kevin
 
@@ -61,35 +59,10 @@ By the end of this journey, you will have:
 ✅ A working MCP Agent deployed on OpenShift  
 ✅ Integration with Neuralbank's credit risk system  
 ✅ A chat interface for commercial agents  
+✅ Keycloak authentication and user management configured  
+✅ Connectivity Link integration for secure service communication  
 ✅ Full observability with OpenTelemetry traces  
-✅ Understanding of best practices for AI/ML on OpenShift  
-
-## Platform Services
-
-The following services are available in your environment. **Note**: The basename (cluster domain) is set using the **Cluster Domain** field in the top navigation bar. Click `Save` to update all links.
-
-### Single Sign-On (SSO)
-
-- **URL**: <a href="https://sso.apps.<CLUSTER_DOMAIN>" target="_blank">https://sso.apps.<CLUSTER_DOMAIN></a>
-- **Access**: Use your OpenShift credentials
-
-### GitLab
-
-- **URL**: <a href="https://gitlab-gitlab.apps.<CLUSTER_DOMAIN>" target="_blank">https://gitlab-gitlab.apps.<CLUSTER_DOMAIN></a>
-- **Users**:
-  - `root` / `backstage`
-  - `pe1` / `backstage`
-  - `pe2` / `backstage`
-  - `pe3` / `backstage`
-  - `dev1` / `backstage`
-  - `dev2` / `backstage`
-  - `dev3` / `backstage`
-
-### Quay Container Registry
-
-- **URL**: <a href="https://quay.apps.<CLUSTER_DOMAIN>" target="_blank">https://quay.apps.<CLUSTER_DOMAIN></a>
-- **Users**:
-  - `quayadmin` / `backstage`
+✅ Understanding of best practices for AI/ML on OpenShift
 
 ## Next Steps
 
