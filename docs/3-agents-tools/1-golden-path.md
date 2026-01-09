@@ -60,9 +60,9 @@ The Platform Engineering team has created a specific template for Neuralbank MCP
 
 2. **Fill in Parameters**:
    - **Application Name**: `customer-service-mcp`
-   - **Project Name**: `neuralbank-mcp`
+   - **Project Name**: `neuralbank` (Neuralbank project)
    - **Git Repository**: Your repository URL (or leave default)
-   - **Namespace**: `neuralbank-mcp`
+   - **Namespace**: `neuralbank` (Neuralbank project)
    - **User**: Use `dev1` / `backstage` for the remaining activities
 
 ![Customer Service MCP Template](../images/customer-service-mcp-template.png)

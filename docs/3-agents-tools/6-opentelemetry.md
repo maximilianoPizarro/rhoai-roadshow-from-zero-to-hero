@@ -131,7 +131,7 @@ Add configuration to `application.properties`:
 
 ```properties
 # OpenTelemetry Configuration
-otel.service.name=neuralbank-mcp-agent
+otel.service.name=customer-service-mcp
 otel.service.version=1.0.0
 
 # OTLP Exporter
@@ -167,7 +167,7 @@ public class CreditRiskTool {
     private final Tracer tracer;
     
     public CreditRiskTool(OpenTelemetry openTelemetry) {
-        this.tracer = openTelemetry.getTracer("neuralbank-mcp-agent");
+        this.tracer = openTelemetry.getTracer("customer-service-mcp");
     }
     
     public MCPResult queryCreditRisk(String customerId) {
@@ -283,7 +283,7 @@ spec:
       resource:
         attributes:
           - key: service.name
-            value: neuralbank-mcp-agent
+            value: customer-service-mcp
             action: upsert
     
     exporters:

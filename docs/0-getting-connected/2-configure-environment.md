@@ -45,9 +45,9 @@ Ensure you can access the following services. **Note**: The basename (cluster do
   - `dev2` / `backstage`
   - `dev3` / `backstage`
 
-### Neuralbank Keycloak
+### Neuralbank Web Site
 
-- **URL**: <a href="https://keycloak-keycloak.apps.<CLUSTER_DOMAIN>" target="_blank">https://keycloak-keycloak.apps.<CLUSTER_DOMAIN></a>
+- **URL**: <a href="https://neuralbank.apps.<CLUSTER_DOMAIN>" target="_blank">https://neuralbank.apps.<CLUSTER_DOMAIN></a>
 - **Realm**: `neuralbank`
 - **Admin User**: `admin` / `Welcome123`
 - **All Users Password**: `Welcome123`
@@ -89,7 +89,7 @@ The following users are pre-configured in the `neuralbank` realm with password `
 Make sure you have the following information ready:
 
 - **Cluster Domain**: `<CLUSTER_DOMAIN>` (set in the top navigation bar)
-- **Project Name**: `neuralbank-mcp`
+- **Project Name**: `neuralbank` (Neuralbank project)
 - **Username**: Your OpenShift username
 - **Password**: Your OpenShift password
 

@@ -26,7 +26,7 @@ The Golden Path template automatically creates a DevSpaces workspace configurati
 
 ### Step 2: Open Your Workspace
 
-1. **Find Your Workspace**: Look for a workspace named `customer-service-mcp` or `neuralbank-mcp-dev`
+1. **Find Your Workspace**: Look for a workspace named `customer-service-mcp`
 2. **Click to Open**: This will launch your development environment
 
 ### Step 3: Wait for Startup
@@ -102,7 +102,7 @@ From your DevSpaces workspace, you can:
 
 To observe the complete Neuralbank architecture:
 
-1. **OpenShift Console**: Navigate to your project (`neuralbank-mcp`)
+1. **OpenShift Console**: Navigate to your project (`neuralbank` - Neuralbank project)
 2. **Topology View**: Click on "Topology" in the left menu
 3. **View Architecture**: You'll see all services including:
    - Frontend services

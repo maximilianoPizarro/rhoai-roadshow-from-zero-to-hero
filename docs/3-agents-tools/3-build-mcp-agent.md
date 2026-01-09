@@ -1,51 +1,60 @@
 # 🔧 Build MCP Agent (customer-service-mcp)
 
-Now let's work with the `customer-service-mcp` service that was generated from the Golden Path template. This Quarkus-based MCP server handles credit risk queries and updates for Neuralbank.
+Now let's work with the `customer-service-mcp` service that was generated from the Golden Path template. This Quarkus-based MCP server handles customer operations and credit risk management for Neuralbank.
 
 ## Service Overview
 
 The `customer-service-mcp` service is a **Quarkus MCP Server** that:
 
 1. **Implements MCP Protocol**: Provides standardized interface for AI assistants
-2. **Exposes Credit Risk Tools**: Functions to query and update credit risk
+2. **Exposes Customer Tools**: Functions to manage customers, credit scores, and risk levels
 3. **Integrates with Backend**: Connects to Neuralbank's services via Connectivity Link
 4. **Handles Authentication**: Uses Keycloak for secure access
+5. **Observability**: Pre-configured OpenTelemetry for distributed tracing
 
 ![Customer Service MCP Component](../images/customer-service-mcp-component.png)
 
 ## Generated Code Structure
 
-The Golden Path template generated a complete Quarkus project with:
+The Golden Path template generated a complete Quarkus project following the [Quarkus MCP Template Skeleton](https://github.com/panchoraposo/rh1-demo/tree/main/software-templates/quarkus-mcp-template/skeleton/src) structure:
 
 ```
 customer-service-mcp/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── com/neuralbank/mcp/
-│   │   │       ├── CustomerServiceMCPServer.java  (Main server class)
+│   │   │   └── com/neuralbank/
+│   │   │       ├── CustomerServiceMcp.java        (Main server class)
 │   │   │       ├── tools/
-│   │   │       │   ├── QueryCreditRiskTool.java   (Commented - needs uncommenting)
-│   │   │       │   └── UpdateCreditRiskTool.java  (Commented - needs uncommenting)
-│   │   │       └── service/
-│   │   │           └── CreditRiskService.java     (Integration layer)
+│   │   │       │   └── CustomerTools.java        (Main tools class - needs uncommenting)
+│   │   │       ├── client/
+│   │   │       │   └── CustomerClient.java       (REST client for backend)
+│   │   │       ├── dto/
+│   │   │       │   ├── request/                   (Request DTOs)
+│   │   │       │   └── response/                  (Response DTOs)
+│   │   │       └── enums/
+│   │   │           └── CustomerType.java          (Enumerations)
 │   │   └── resources/
 │   │       ├── application.properties             (Configuration)
 │   │       └── mcp-config.yaml                    (MCP configuration)
 │   └── test/
+│       └── java/
+│           └── com/neuralbank/
 ├── .devcontainer/
 │   └── devcontainer.json                          (DevSpaces config)
 ├── pom.xml                                         (Maven dependencies)
 └── README.md
 ```
 
-## Kevin's First Task: Uncomment the Code
+### Key File Location
 
-The template generates code with **intentional commented sections**. This allows you to:
+The main class to modify is located at:
+- **GitLab Path**: `/developers/customer-service-mcp/-/blob/main/src/main/java/com/neuralbank/tools/CustomerTools.java`
+- **Local Path**: `src/main/java/com/neuralbank/tools/CustomerTools.java`
 
-1. **Understand the Structure**: See how everything fits together
-2. **Learn by Doing**: Uncomment and configure step by step
-3. **Customize**: Adapt the code to your specific needs
+## Kevin's Main Task: Uncomment updateRiskLevel
+
+The template generates code with **intentional commented sections**. The **main activity** is to uncomment the `updateRiskLevel` method in `CustomerTools.java`. This method allows commercial agents to update customer risk levels through the MCP interface.
 
 ### Step 1: Open the Project in DevSpaces
 
@@ -53,19 +62,50 @@ The template generates code with **intentional commented sections**. This allows
 2. **Open Project**: Navigate to the `customer-service-mcp` directory
 3. **Explore Structure**: Review the generated code
 
-### Step 2: Uncomment QueryCreditRiskTool
+### Step 2: Locate CustomerTools.java
 
-1. **Open File**: `src/main/java/com/neuralbank/mcp/tools/QueryCreditRiskTool.java`
-2. **Find Commented Code**: Look for sections marked with `// TODO: Uncomment this section`
-3. **Uncomment**: Remove the comment markers and review the implementation
-4. **Understand**: Read through the code to understand how it queries credit risk
+1. **Open File**: `src/main/java/com/neuralbank/tools/CustomerTools.java`
+2. **Review Structure**: The class contains multiple tools for customer management:
+   - Customer creation and retrieval
+   - Customer search
+   - Customer updates
+   - Credit score operations
+   - Customer status management
+   - Executive assignment
 
-### Step 3: Uncomment UpdateCreditRiskTool
+### Step 3: Uncomment updateRiskLevel (Main Activity)
 
-1. **Open File**: `src/main/java/com/neuralbank/mcp/tools/UpdateCreditRiskTool.java`
-2. **Find Commented Code**: Look for the update implementation
-3. **Uncomment**: Remove comment markers
-4. **Review**: Understand how it updates credit risk levels
+The **main activity** is to uncomment the `updateRiskLevel` method. This is the core functionality that enables commercial agents to update customer risk levels:
+
+1. **Find the Method**: Look for the commented `updateRiskLevel` method in `CustomerTools.java`
+2. **Uncomment**: Remove the comment markers (`/*` and `*/`) around the method
+3. **Review Implementation**: Understand how it:
+   - Takes customer ID, risk level, and justification
+   - Calls the backend service via `CustomerClient`
+   - Returns a success message
+
+```java
+@Tool(description = "Update the risk level for a customer with justification.")
+public String updateRiskLevel(
+        @ToolArg(description = "Customer ID. Can be passed as a number (e.g., 2) or string (e.g., \"2\")") String customerId,
+        @ToolArg(description = "New risk level: Bajo, Medio, Alto, Muy Alto") String nivelRiesgo,
+        @ToolArg(description = "Justification for the risk level change") String justificacion
+) {
+    // Implementation...
+}
+```
+
+### Additional Tools (Testing Scenarios)
+
+The `CustomerTools` class includes many other tools that are **pre-configured and ready to use** for testing different scenarios:
+
+- **Customer Management**: `createCustomer`, `getCustomer`, `updateCustomer`
+- **Credit Operations**: `getCreditScore`, `calculateCreditScore`
+- **Status Management**: `activateCustomer`, `deactivateCustomer`, `blockCustomer`, `unblockCustomer`
+- **Search**: `searchCustomers` with various filters
+- **Summary**: `getCustomerSummary` for comprehensive customer information
+
+These tools are **already implemented** and can be used to test various scenarios, but the **main focus** is on `updateRiskLevel`.
 
 ### Step 4: Review Configuration
 
@@ -73,12 +113,39 @@ The template generates code with **intentional commented sections**. This allows
    - Keycloak URL
    - Connectivity Link endpoints
    - Service URLs
-   - OpenTelemetry settings
+   - **OpenTelemetry settings** (see below)
 
 2. **mcp-config.yaml**: Review MCP server configuration
    - Tool definitions
    - Resource definitions
    - Prompt templates
+
+### OpenTelemetry Configuration
+
+The service includes pre-configured OpenTelemetry settings in `application.properties` for distributed tracing:
+
+```properties
+# OpenTelemetry Configuration
+quarkus.otel.metrics.enabled=true
+quarkus.otel.simple=true
+quarkus.otel.exporter.otlp.endpoint=http://dev-collector.observability.svc.cluster.local:4317
+```
+
+**Configuration Details:**
+- **`quarkus.otel.metrics.enabled=true`**: Enables OpenTelemetry metrics collection
+- **`quarkus.otel.simple=true`**: Uses simplified OpenTelemetry configuration
+- **`quarkus.otel.exporter.otlp.endpoint`**: Points to the OpenTelemetry collector in the `observability` namespace
+
+**Connection to Backend:**
+- The OpenTelemetry collector receives traces from `customer-service-mcp`
+- Traces include spans for:
+  - MCP tool invocations
+  - REST client calls to backend services via Connectivity Link
+  - Keycloak authentication flows
+  - Database operations (if applicable)
+- All traces are sent to the collector, which forwards them to the observability backend for visualization
+
+This configuration enables end-to-end distributed tracing from the MCP agent through Connectivity Link to the backend services, providing full visibility into the request flow.
 
 ### Step 5: Build and Test Locally
 
@@ -122,32 +189,39 @@ git push
 
 ### MCP Server Implementation
 
-The main server class (`CustomerServiceMCPServer.java`) sets up the MCP protocol server:
+The main server class (`CustomerServiceMcp.java`) sets up the MCP protocol server:
 
 - **Registers Tools**: Makes tools available to AI assistants
 - **Handles Requests**: Processes MCP protocol messages
 - **Manages Lifecycle**: Starts and stops the server
 
-### Credit Risk Tools
+### Customer Tools
 
-The tools you uncommented provide:
+The `CustomerTools` class provides comprehensive customer management capabilities:
 
-1. **QueryCreditRiskTool**: 
-   - Queries current credit risk for a customer
-   - Returns risk level, score, and last update time
+1. **Main Activity - updateRiskLevel**: 
+   - Updates customer risk level with justification
+   - This is the primary tool for commercial agents
+   - Takes customer ID, risk level (Bajo, Medio, Alto, Muy Alto), and justification
 
-2. **UpdateCreditRiskTool**:
-   - Updates credit risk based on loan request
-   - Takes customer ID, loan amount, and purpose
-   - Returns previous and new risk levels
+2. **Additional Tools** (for testing scenarios):
+   - **Customer Operations**: Create, retrieve, update, search customers
+   - **Credit Score**: Get and calculate credit scores
+   - **Status Management**: Activate, deactivate, block, unblock customers
+   - **Executive Assignment**: Assign account executives
 
 ### Integration Layer
 
-The `CreditRiskService` handles:
-- **Keycloak Authentication**: Gets access tokens
-- **Connectivity Link**: Makes secure service-to-service calls
-- **Error Handling**: Manages failures gracefully
-- **OpenTelemetry**: Adds tracing spans
+The `CustomerClient` (REST client) handles:
+- **Keycloak Authentication**: Gets access tokens automatically via MicroProfile REST Client
+- **Connectivity Link**: Makes secure service-to-service calls to backend services
+- **Error Handling**: Manages failures gracefully with proper exception handling
+- **OpenTelemetry**: Automatically adds tracing spans for all REST calls
+
+**Backend Connection:**
+- The `CustomerClient` is configured to call backend services through Connectivity Link
+- All requests are automatically authenticated using Keycloak tokens
+- OpenTelemetry traces show the complete flow from MCP tool → REST client → Connectivity Link → Backend service
 
 ## Development Workflow
 

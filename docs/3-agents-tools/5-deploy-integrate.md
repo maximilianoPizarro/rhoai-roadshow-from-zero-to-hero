@@ -148,7 +148,7 @@ You can also use Cursor to interact with the MCP agent:
 
 ### View in OpenShift Topology
 
-1. **OpenShift Console**: Navigate to `neuralbank-mcp` project
+1. **OpenShift Console**: Navigate to `neuralbank` project (Neuralbank project)
 2. **Topology View**: See `customer-service-mcp` in the topology
 3. **Service Connections**: View how it connects to other services
 
