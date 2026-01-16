@@ -2,6 +2,26 @@
 
 Now that you're connected to OpenShift AI, let's configure your environment for the Neuralbank MCP Agent project.
 
+## Environment Dashboard
+
+Before we begin, familiarize yourself with the **Environment Dashboard** - your centralized access point to all platform services, tools, and credentials.
+
+![Environment Dashboard](../images/dashboard-env.png)
+
+### Dashboard Access
+
+- **URL**: <a href="https://dashboard.apps.<CLUSTER_DOMAIN>" target="_blank">https://dashboard.apps.<CLUSTER_DOMAIN></a>
+- **Description**: Centralized dashboard providing quick access to all platform services, tools, and credentials
+- **Access**: Available to all users with cluster access
+
+The dashboard provides direct links and credentials for:
+
+- **Platform & Tools**: Keycloak Admin Console, Quay Container Registry
+- **DevOps & Development**: GitLab (SCM), Red Hat Developer Hub
+- **Demo & GitOps**: NeuralBank App, ArgoCD (GitOps)
+
+?> **Tip**: The dashboard link is also available in the top navigation bar (next to the GitHub icon) when you set your Cluster Domain.
+
 ## Verify Your Access
 
 Ensure you can access the following services. **Note**: The basename (cluster domain) is set using the **Cluster Domain** field in the top navigation bar. Click `Save` to update all links.
@@ -51,29 +71,6 @@ Ensure you can access the following services. **Note**: The basename (cluster do
 - **Realm**: `neuralbank`
 - **Admin User**: `admin` / `Welcome123`
 - **All Users Password**: `Welcome123`
-
-### Environment Dashboard
-
-- **URL**: <a href="https://dashboard.apps.<CLUSTER_DOMAIN>" target="_blank">https://dashboard.apps.<CLUSTER_DOMAIN></a>
-- **Description**: Centralized dashboard providing quick access to all platform services, tools, and credentials
-- **Access**: Available to all users with cluster access
-
-The dashboard provides direct links and credentials for:
-
-- **Platform & Tools**:
-  - Keycloak (Admin Console) - `temp-admin` / `a7d2bdd19ac34b7093e666ae775dd8d6`
-  - Quay Registry - `quayadmin` / `backstage`
-
-- **DevOps & Development**:
-  - GitLab (SCM) - Admin: `root` / `backstage` | Platform Engineers: `pe1`, `pe2`, `pe3` | Developers: `dev1`, `dev2`, `dev3`
-  - Red Hat Developer Hub - Platform Engineers: `pe1`, `pe2`, `pe3` | Developers: `dev1`, `dev2`, `dev3`
-  - Common password for all: `backstage`
-
-- **Demo & GitOps**:
-  - NeuralBank App - Users: `javier.rodriguez@email.com`, `mario.gomez@email.com` | Password: `Welcome123`
-  - ArgoCD (GitOps) - `admin` / `w4vdNQ5AegkXYa8TMIGqHt3Pn7RoUWZb`
-
-?> **Tip**: The dashboard link is also available in the top navigation bar (next to the GitHub icon) when you set your Cluster Domain.
 
 #### Available Users
 
