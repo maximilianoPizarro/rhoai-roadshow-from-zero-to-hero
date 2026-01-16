@@ -18,19 +18,48 @@ For Neuralbank, MCP Agents serve as intelligent intermediaries that:
 
 ## LlamaStack Overview
 
-**LlamaStack** is the open-source framework for building generative AI applications. It provides a comprehensive platform for deploying and managing LLMs, tools, agents, and MCP servers.
+**LlamaStack** is an open-source framework for building production-ready generative AI applications on Kubernetes. It provides a comprehensive, enterprise-grade platform for deploying, managing, and orchestrating Large Language Models (LLMs), tools, agents, and MCP servers at scale.
 
 ![LlamaStack Overview](../images/llama-stack.png)
 
-LlamaStack features:
+### Core Capabilities
 
-- **Multiple Model Support**: Chat with various LLM models (Llama, DeepSeek, etc.)
-- **RAG Capabilities**: Built-in vector database support for Retrieval Augmented Generation
-- **Tools and Agents**: Extensible tool system for custom functionality
-- **MCP Integration**: Native support for Model Context Protocol servers
-- **Playground Interface**: Interactive UI for testing and development
+LlamaStack offers a complete ecosystem for AI application development:
 
-The Neuralbank MCP Agent integrates with LlamaStack's Playground, allowing commercial agents to interact with the credit risk system through a chat interface.
+- **Multiple Model Support**: Seamlessly integrate and switch between various LLM models (Llama, DeepSeek, Mistral, and more) through a unified interface
+- **RAG (Retrieval Augmented Generation)**: Built-in vector database support with automatic embedding generation, enabling context-aware responses from your knowledge base
+- **Tools and Agents Framework**: Extensible tool system that allows you to create custom functions and chain them together for complex workflows
+- **MCP (Model Context Protocol) Integration**: Native support for MCP servers, enabling standardized communication between AI assistants and external data sources
+- **Playground Interface**: Interactive web-based UI for testing, debugging, and developing AI applications without writing code
+- **Kubernetes-Native**: Designed for OpenShift/Kubernetes, providing scalability, reliability, and enterprise security features
+- **Observability**: Built-in monitoring, logging, and tracing capabilities for production deployments
+
+### Architecture Benefits
+
+LlamaStack's architecture provides several advantages for enterprise AI deployments:
+
+- **Microservices-Based**: Modular design allows independent scaling of components (models, tools, agents)
+- **API-First**: RESTful and streaming APIs for easy integration with existing systems
+- **Security**: Role-based access control, authentication, and secure communication channels
+- **High Availability**: Designed for 99.9% uptime with health checks, auto-recovery, and load balancing
+- **Resource Management**: Efficient GPU and CPU utilization with intelligent workload scheduling
+
+### Integration with Neuralbank
+
+The Neuralbank MCP Agent integrates seamlessly with LlamaStack's Playground, creating a powerful workflow:
+
+1. **Commercial agents** interact with the system through LlamaStack's intuitive chat interface
+2. **LlamaStack** routes requests to the MCP Agent using the Model Context Protocol
+3. **MCP Agent** processes queries and interacts with Neuralbank's backend services
+4. **Results** flow back through LlamaStack to provide real-time responses to commercial agents
+
+This integration enables commercial agents to:
+- Query customer credit risk information in natural language
+- Update risk levels based on loan application parameters
+- Get instant feedback on credit decisions
+- Maintain full audit trails for compliance
+
+The combination of LlamaStack's AI capabilities and MCP's standardized protocol creates a robust, scalable solution for Neuralbank's credit risk management needs.
 
 ## The Neuralbank MCP Agent
 

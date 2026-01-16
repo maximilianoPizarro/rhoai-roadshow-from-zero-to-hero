@@ -115,7 +115,11 @@
 
       console.info('INFO - setting cluster to :', cdomain);
       localStorage.setItem('CLUSTER_DOMAIN', cdomain);
-      location.reload();
+      // Update dashboard link before reload
+      setTimeout(function() {
+        updateDashboardLink();
+        location.reload();
+      }, 100);
     }
 
     function clearStorage () {
@@ -176,9 +180,55 @@
           // Scroll to top on route change
           hook.doneEach(function() {
             window.scrollTo(0, 0);
+            // Update dashboard link after route change
+            setTimeout(updateDashboardLink, 100);
+          });
+          
+          // Add dashboard link to navigation when Docsify is ready
+          hook.ready(function() {
+            updateDashboardLink();
+            // Update link periodically to catch DOM changes
+            setInterval(updateDashboardLink, 1000);
           });
         }
       ]
+    }
+    
+    // Function to update dashboard link
+    function updateDashboardLink() {
+      const clusterDomain = localStorage.getItem('CLUSTER_DOMAIN');
+      const githubCorner = document.querySelector('.github-corner');
+      
+      if (!githubCorner) {
+        return; // GitHub corner not yet rendered
+      }
+      
+      const existingLink = document.getElementById('dashboard-link');
+      
+      if (clusterDomain && clusterDomain.trim() !== '') {
+        if (!existingLink) {
+          // Create dashboard link
+          const dashboardLink = document.createElement('a');
+          dashboardLink.id = 'dashboard-link';
+          dashboardLink.href = `https://dashboard.apps.${clusterDomain}`;
+          dashboardLink.target = '_blank';
+          dashboardLink.rel = 'noopener noreferrer';
+          dashboardLink.title = 'Environment Dashboard';
+          dashboardLink.className = 'dashboard-link';
+          dashboardLink.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 13H11V3H3V13ZM3 21H11V15H3V21ZM13 21H21V11H13V21ZM13 3V9H21V3H13Z" fill="currentColor"/></svg>';
+          
+          // Insert before GitHub corner
+          githubCorner.parentNode.insertBefore(dashboardLink, githubCorner);
+        } else {
+          // Update existing link
+          existingLink.href = `https://dashboard.apps.${clusterDomain}`;
+        }
+      } else {
+        // Remove link if cluster domain is cleared
+        if (existingLink) {
+          existingLink.remove();
+        }
+      }
     }
   </script>
   <!-- Docsify v4 -->
@@ -215,6 +265,33 @@
       svg {
         fill: #CC0000 !important;
       }
+    }
+    .dashboard-link {
+      position: fixed;
+      top: 0;
+      right: 80px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0066CC;
+      color: white;
+      text-decoration: none;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .dashboard-link:hover {
+      background-color: #0052A3;
+      color: white;
+    }
+    .dashboard-link svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
     }
     .sidebar {
       a {
