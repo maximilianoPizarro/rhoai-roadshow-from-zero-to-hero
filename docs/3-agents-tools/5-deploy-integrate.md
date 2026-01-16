@@ -56,10 +56,12 @@ Before integrating the MCP service, loan requests cannot be automatically proces
 1. **Open MCP Settings**: In Playground, navigate to MCP server configuration
 2. **Configure customer-service-mcp**: 
    - **Name**: `customer-service-mcp`
-   - **Endpoint**: `http://customer-service-mcp.neuralbank.svc.cluster.local:8081/mcp/sse`
+   - **Endpoint**: `http://customer-service-mcp.neuralbank.apps.<CLUSTER_DOMAIN>/mcp/sse`
    - **Protocol**: HTTP (SSE - Server-Sent Events)
    - **Port**: 8081
 3. **Verify Connection**: Ensure the service is connected and tools are available
+
+?> **Note**: Use the external route URL (`http://customer-service-mcp.neuralbank.apps.<CLUSTER_DOMAIN>/mcp/sse`) for access from Playground. The internal `svc.cluster.local` URL is only accessible from within the cluster.
 
 ![LlamaStack MCP Configuration](../images/llama-stack-mcp-configuration.png)
 
@@ -161,10 +163,12 @@ You can also use Cursor to interact with the MCP agent:
 
 1. **Open Cursor**: In your DevSpaces workspace or locally
 2. **Configure MCP**: Point Cursor to your `customer-service-mcp` service
-   - **Endpoint**: `http://customer-service-mcp.neuralbank.svc.cluster.local:8081/mcp/sse`
+   - **Endpoint**: `http://customer-service-mcp.neuralbank.apps.<CLUSTER_DOMAIN>/mcp/sse`
    - **Protocol**: HTTP (SSE)
    - **Port**: 8081
 3. **Test Queries**: Ask Cursor to use MCP tools
+
+?> **Note**: When configuring Cursor from DevSpaces (inside the cluster), you can use either the internal service URL (`http://customer-service-mcp.neuralbank.svc.cluster.local:8081/mcp/sse`) or the external route. For local Cursor installations, use the external route URL.
 
 ![Cursor Fetch Customer Service](../images/cursor-fetch-customer-service.png)
 

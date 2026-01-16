@@ -13,18 +13,121 @@ Before deploying to production, it's crucial to test your MCP Agent. **MCP Inspe
 
 ## Setting Up MCP Inspector
 
-### Installation
+### Local Installation
 
-MCP Inspector can be accessed via:
+MCP Inspector is not running as a service in the cluster. You need to install it locally on your machine. MCP Inspector is a Node.js application that you can run locally to test your MCP servers.
 
-1. **Web Interface**: Available in your OpenShift cluster
-2. **CLI Tool**: Install locally for command-line testing
-3. **VS Code Extension**: Use within your development environment
+#### Prerequisites
 
-### Accessing MCP Inspector
+- **Node.js**: Version 18 or higher
+- **npm**: Comes with Node.js (version 9 or higher)
 
-Navigate to MCP Inspector in your cluster:
-<a href="https://mcp-inspector-mcp-inspector.apps.<CLUSTER_DOMAIN>" target="_blank">https://mcp-inspector-mcp-inspector.apps.<CLUSTER_DOMAIN></a>
+#### Installation Steps
+
+##### For Linux
+
+1. **Install Node.js** (if not already installed):
+   ```bash
+   # Using NodeSource repository (recommended)
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   sudo apt-get install -y nodejs
+   
+   # Or using package manager
+   sudo apt update
+   sudo apt install nodejs npm
+   ```
+
+2. **Verify Installation**:
+   ```bash
+   node --version  # Should show v18.x.x or higher
+   npm --version   # Should show 9.x.x or higher
+   ```
+
+3. **Install MCP Inspector**:
+   ```bash
+   npm install -g @modelcontextprotocol/inspector
+   ```
+
+4. **Run MCP Inspector**:
+   ```bash
+   mcp-inspector
+   ```
+   
+   This will start the MCP Inspector web interface, typically available at `http://localhost:3000`
+
+##### For Windows
+
+1. **Install Node.js**:
+   - Download the Windows installer from [nodejs.org](https://nodejs.org/)
+   - Run the installer and follow the setup wizard
+   - Ensure "Add to PATH" is checked during installation
+
+2. **Verify Installation** (using PowerShell or Command Prompt):
+   ```powershell
+   node --version  # Should show v18.x.x or higher
+   npm --version   # Should show 9.x.x or higher
+   ```
+
+3. **Install MCP Inspector**:
+   ```powershell
+   npm install -g @modelcontextprotocol/inspector
+   ```
+
+4. **Run MCP Inspector**:
+   ```powershell
+   mcp-inspector
+   ```
+   
+   This will start the MCP Inspector web interface, typically available at `http://localhost:3000`
+
+##### For macOS
+
+1. **Install Node.js** (choose one method):
+   
+   **Option A: Using Homebrew** (recommended):
+   ```bash
+   brew install node
+   ```
+   
+   **Option B: Using Official Installer**:
+   - Download the macOS installer from [nodejs.org](https://nodejs.org/)
+   - Run the installer package
+
+2. **Verify Installation**:
+   ```bash
+   node --version  # Should show v18.x.x or higher
+   npm --version   # Should show 9.x.x or higher
+   ```
+
+3. **Install MCP Inspector**:
+   ```bash
+   npm install -g @modelcontextprotocol/inspector
+   ```
+
+4. **Run MCP Inspector**:
+   ```bash
+   mcp-inspector
+   ```
+   
+   This will start the MCP Inspector web interface, typically available at `http://localhost:3000`
+
+#### Alternative: Run from Source
+
+If you prefer to run from source or the global installation doesn't work:
+
+```bash
+# Clone the repository
+git clone https://github.com/modelcontextprotocol/inspector.git
+cd inspector
+
+# Install dependencies
+npm install
+
+# Run the inspector
+npm start
+```
+
+?> **Note**: The MCP Inspector will open in your default web browser. If it doesn't, navigate to `http://localhost:3000` manually.
 
 ## Testing Your MCP Agent
 
@@ -35,10 +138,12 @@ In MCP Inspector:
 1. **Add Server**: Click "Add MCP Server"
 2. **Enter Details**:
    - **Name**: `neuralbank-credit-risk`
-   - **URL**: `http://customer-service-mcp.neuralbank.svc.cluster.local:8081/mcp/sse`
+   - **URL**: `http://customer-service-mcp.neuralbank.apps.<CLUSTER_DOMAIN>/mcp/sse`
    - **Protocol**: `MCP` (SSE - Server-Sent Events)
 
 3. **Connect**: Click "Connect"
+
+?> **Important**: Use the external route URL (`http://customer-service-mcp.neuralbank.apps.<CLUSTER_DOMAIN>/mcp/sse`) instead of the internal service URL. The external route is accessible from your local machine, while the internal `svc.cluster.local` URL is only accessible from within the cluster.
 
 ### 2. List Available Tools
 

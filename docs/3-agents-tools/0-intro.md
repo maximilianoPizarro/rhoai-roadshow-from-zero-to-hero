@@ -22,6 +22,36 @@ For Neuralbank, MCP Agents serve as intelligent intermediaries that:
 
 ![LlamaStack Overview](../images/llama-stack.png)
 
+> **Reference**: This section is based on insights from the Red Hat blog post: ["Llama Stack and the case for an open 'run-anywhere' contract for agents"](https://www.redhat.com/en/blog/llama-stack-and-case-open-run-anywhere-contract-agents)
+
+### The 4 Layers of LlamaStack
+
+LlamaStack is better understood as four distinct layers, rather than just another agent framework:
+
+#### 1. Build Layer (Client SDK/Toolkit)
+A familiar surface for building agents, similar to LangChain, LangFlow, and CrewAI. Developers can author agents using common abstractions. The agent artifacts (YAML configs, Python tasks, tool bindings) are portable across environments.
+
+#### 2. Agent Artifacts and Dependencies
+The tangible artifacts of agent development that need runtimes and API endpoints for model inference, tool calling, safety, and telemetry. LlamaStack enables both local development and remote endpoint deployments, ensuring artifacts run consistently regardless of backend models or tools.
+
+#### 3. Platform / API Layer
+A standardized API surface for core AI services, including inference, memory, tool use, post-training, data and synthetic generation, and evaluation. LlamaStack has built-in support for:
+- **OpenAI-compatible APIs**: One of the few open implementations of OpenAI's APIs (Chat Completions, Responses API, file_search, vectorstores, and more)
+- **Model Context Protocol (MCP)**: Open protocol for tool calling and standardized communication
+- **Extended APIs**: Beyond OpenAI APIs for eval, fine-tuning, model-customization, scoring, and dataset management
+
+#### 4. Provider Model
+A plugin system for backends—whether open source or proprietary. This allows you to swap model providers, vector databases, or runtime implementations without touching agent code. Your agent logic remains unchanged while infrastructure can be swapped.
+
+### The Kubernetes Analogy
+
+Much like Kubernetes defined a **control plane + plugin contract** (CNI for networking, CSI for storage, CRI for runtimes) that enabled portability across vendors and clouds, **LlamaStack aims to be the "run-anywhere contract" for agents**:
+
+- **For developers**: The APIs you use and artifacts you produce should run without change across environments
+- **For platforms**: The underlying infrastructure (models, vector databases, training runtimes, tool APIs) should be pluggable providers
+
+Think of Kubernetes orchestrating containers, and LlamaStack orchestrating agents and their providers.
+
 ### Core Capabilities
 
 LlamaStack offers a complete ecosystem for AI application development:
@@ -43,6 +73,7 @@ LlamaStack's architecture provides several advantages for enterprise AI deployme
 - **Security**: Role-based access control, authentication, and secure communication channels
 - **High Availability**: Designed for 99.9% uptime with health checks, auto-recovery, and load balancing
 - **Resource Management**: Efficient GPU and CPU utilization with intelligent workload scheduling
+- **Open Standards**: Supports both OpenAI-compatible APIs (for compatibility) and open standards like MCP (for vendor independence)
 
 ### Integration with Neuralbank
 
