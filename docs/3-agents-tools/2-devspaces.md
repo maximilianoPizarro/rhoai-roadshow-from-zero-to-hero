@@ -116,6 +116,17 @@ To preview and test the MCP service locally in your DevSpaces workspace:
 
 ?> **Tip**: The MCP service uses Server-Sent Events (SSE) for real-time communication. Make sure to configure your MCP client (like Playground or Cursor) to use `http://localhost:8081/mcp/sse` when testing locally in DevSpaces.
 
+## 🎉 Congratulations!
+
+You've successfully set up your DevSpaces workspace! You've learned how to:
+
+- <input type="checkbox" id="devspaces1" checked> <label for="devspaces1">Access and configure DevSpaces workspaces</label>
+- <input type="checkbox" id="devspaces2" checked> <label for="devspaces2">Navigate the development environment</label>
+- <input type="checkbox" id="devspaces3" checked> <label for="devspaces3">Preview the MCP service locally</label>
+- <input type="checkbox" id="devspaces4" checked> <label for="devspaces4">Understand the development workflow</label>
+
+Your development environment is now ready! You can start building and testing your MCP Agent.
+
 ## Working with the Generated Code
 
 The template generates code with commented sections. Your tasks:

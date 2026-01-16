@@ -391,15 +391,37 @@ OpenTelemetry traces provide:
 
 This satisfies Neuralbank's compliance requirements for transparent and auditable operations.
 
-## Next Steps
+## 🎉🎉🎉 Congratulations! You've Completed the Full Journey! 🎉🎉🎉
 
-Congratulations! You've completed the full journey:
+**Outstanding work!** You've successfully completed the entire MCP Agents workshop from zero to hero. Here's what you've accomplished:
 
-<input type="checkbox" id="journey1" checked> <label for="journey1">Built and deployed an MCP Agent</label>  
-<input type="checkbox" id="journey2" checked> <label for="journey2">Integrated with Neuralbank's systems</label>  
-<input type="checkbox" id="journey3" checked> <label for="journey3">Set up comprehensive observability</label>  
+<input type="checkbox" id="journey1" checked> <label for="journey1">**Built and deployed an MCP Agent** - Created a production-ready MCP service using Quarkus</label>  
+<input type="checkbox" id="journey2" checked> <label for="journey2">**Integrated with Neuralbank's systems** - Connected to backend services via Connectivity Link</label>  
+<input type="checkbox" id="journey3" checked> <label for="journey3">**Set up comprehensive observability** - Implemented distributed tracing with OpenTelemetry</label>  
+<input type="checkbox" id="journey4" checked> <label for="journey4">**Configured authentication** - Integrated Keycloak for secure access</label>  
+<input type="checkbox" id="journey5" checked> <label for="journey5">**Implemented rate limiting** - Protected services with Connectivity Link policies</label>  
+<input type="checkbox" id="journey6" checked> <label for="journey6">**Tested thoroughly** - Validated functionality with MCP Inspector and Cursor</label>  
+<input type="checkbox" id="journey7" checked> <label for="journey7">**Deployed to production** - Integrated with LlamaStack Playground for real-world use</label>  
 
-Your MCP Agent is now production-ready and helping Neuralbank accelerate credit decisions while maintaining compliance!
+### What You've Built
+
+Your MCP Agent is now **production-ready** and actively helping Neuralbank:
+- ⚡ **Accelerate credit decisions** from days to minutes
+- 🔒 **Maintain compliance** with full audit trails
+- 📊 **Provide transparency** in risk assessment changes
+- 🚀 **Scale operations** without proportional staff increases
+
+### Skills You've Gained
+
+Throughout this journey, you've mastered:
+- **MCP Protocol**: Understanding and implementing Model Context Protocol
+- **Quarkus Development**: Building cloud-native Java applications
+- **Service Mesh**: Working with Connectivity Link for secure communication
+- **Observability**: Implementing distributed tracing and monitoring
+- **DevOps**: CI/CD pipelines, GitOps, and container deployment
+- **AI Integration**: Connecting LLMs with enterprise systems
+
+**Your MCP Agent is now helping Neuralbank accelerate credit decisions while maintaining compliance!**
 
 ---
 

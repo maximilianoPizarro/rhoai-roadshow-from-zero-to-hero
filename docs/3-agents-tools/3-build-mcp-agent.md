@@ -254,6 +254,18 @@ Once committed, test in LlamaStack Playground:
 2. **Select MCP Server**: Choose `customer-service-mcp`
 3. **Test Tools**: Try querying and updating credit risk
 
+## 🎉 Congratulations!
+
+You've successfully built your MCP Agent! You've learned how to:
+
+- <input type="checkbox" id="build1" checked> <label for="build1">Navigate the generated project structure</label>
+- <input type="checkbox" id="build2" checked> <label for="build2">Implement the updateRiskLevel tool in CustomerTools</label>
+- <input type="checkbox" id="build3" checked> <label for="build3">Configure OpenTelemetry for observability</label>
+- <input type="checkbox" id="build4" checked> <label for="build4">Integrate with backend services via Connectivity Link</label>
+- <input type="checkbox" id="build5" checked> <label for="build5">Commit and push changes to GitLab</label>
+
+Your MCP Agent is now ready for testing! The `updateRiskLevel` tool will allow commercial agents to modify credit risk assessments based on loan requests.
+
 ## Next Steps
 
 Now that you've uncommented the code and committed it, let's test the service using **MCP Inspector** and **Cursor** to verify everything works correctly.
