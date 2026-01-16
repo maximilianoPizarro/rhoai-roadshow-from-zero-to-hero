@@ -35,14 +35,14 @@ For Kevin (and you), the Golden Path means you can:
 
 The Platform Engineering team has created a specific template for Neuralbank MCP Agents called **Quarkus MCP Server**. This template generates the `customer-service-mcp` service with:
 
-- <input type="checkbox" id="template1" checked> <label for="template1">Quarkus MCP server skeleton code</label>
-- <input type="checkbox" id="template2" checked> <label for="template2">Java service integration examples</label>
-- <input type="checkbox" id="template3" checked> <label for="template3">Keycloak authentication setup</label>
-- <input type="checkbox" id="template4" checked> <label for="template4">Connectivity Link configuration</label>
-- <input type="checkbox" id="template5" checked> <label for="template5">OpenTelemetry instrumentation</label>
-- <input type="checkbox" id="template6" checked> <label for="template6">DevSpaces workspace configuration</label>
-- <input type="checkbox" id="template7" checked> <label for="template7">Testing framework setup</label>
-- <input type="checkbox" id="template8" checked> <label for="template8">CI/CD pipeline templates</label>
+- <input type="checkbox" id="template1"> <label for="template1">Quarkus MCP server skeleton code</label>
+- <input type="checkbox" id="template2"> <label for="template2">Java service integration examples</label>
+- <input type="checkbox" id="template3"> <label for="template3">Keycloak authentication setup</label>
+- <input type="checkbox" id="template4"> <label for="template4">Connectivity Link configuration</label>
+- <input type="checkbox" id="template5"> <label for="template5">OpenTelemetry instrumentation</label>
+- <input type="checkbox" id="template6"> <label for="template6">DevSpaces workspace configuration</label>
+- <input type="checkbox" id="template7"> <label for="template7">Testing framework setup</label>
+- <input type="checkbox" id="template8"> <label for="template8">CI/CD pipeline templates</label>
 
 ### Step 1: Find the Template
 

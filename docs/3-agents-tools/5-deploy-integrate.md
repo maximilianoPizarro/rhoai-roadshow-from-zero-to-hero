@@ -256,11 +256,11 @@ See [OpenTelemetry Observability](6-opentelemetry.md) for details on viewing tra
 
 You've successfully deployed and integrated your MCP Agent! You've learned how to:
 
-- <input type="checkbox" id="deploy1" checked> <label for="deploy1">Configure MCP server in LlamaStack Playground</label>
-- <input type="checkbox" id="deploy2" checked> <label for="deploy2">Test loan approval scenarios (rejected → approved)</label>
-- <input type="checkbox" id="deploy3" checked> <label for="deploy3">Integrate with Cursor for AI-assisted development</label>
-- <input type="checkbox" id="deploy4" checked> <label for="deploy4">Understand CI/CD pipeline with OpenShift Pipelines</label>
-- <input type="checkbox" id="deploy5" checked> <label for="deploy5">Explore GitOps deployment with ArgoCD</label>
+- <input type="checkbox" id="deploy1"> <label for="deploy1">Configure MCP server in LlamaStack Playground</label>
+- <input type="checkbox" id="deploy2"> <label for="deploy2">Test loan approval scenarios (rejected → approved)</label>
+- <input type="checkbox" id="deploy3"> <label for="deploy3">Integrate with Cursor for AI-assisted development</label>
+- <input type="checkbox" id="deploy4"> <label for="deploy4">Understand CI/CD pipeline with OpenShift Pipelines</label>
+- <input type="checkbox" id="deploy5"> <label for="deploy5">Explore GitOps deployment with ArgoCD</label>
 
 Your MCP Agent is now live and helping commercial agents make faster credit decisions! The integration with Playground allows agents to update credit risk levels in real-time, transforming loan approval workflows.
 

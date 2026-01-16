@@ -605,15 +605,88 @@
       height: auto;
     }
     
-    /* Checkbox styling */
+    /* Red Hat UX Checkbox Styling */
     .markdown-section input[type="checkbox"] {
-      margin-right: 8px;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      min-height: 18px;
+      margin: 0 12px 0 0;
+      padding: 0;
+      border: 2px solid #6A6E73;
+      border-radius: 3px;
+      background-color: #FFFFFF;
       cursor: pointer;
+      position: relative;
+      vertical-align: middle;
+      transition: all 0.15s ease-in-out;
+      flex-shrink: 0;
+    }
+    
+    .markdown-section input[type="checkbox"]:hover {
+      border-color: #0066CC;
+      background-color: #F0F0F0;
+    }
+    
+    .markdown-section input[type="checkbox"]:focus {
+      outline: none;
+      border-color: #0066CC;
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+    }
+    
+    .markdown-section input[type="checkbox"]:checked {
+      background-color: #0066CC;
+      border-color: #0066CC;
+    }
+    
+    .markdown-section input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid #FFFFFF;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    
+    .markdown-section input[type="checkbox"]:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background-color: #F5F5F5;
     }
     
     .markdown-section label {
       cursor: pointer;
       user-select: none;
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-family: "RedHatText", Overpass, "Open Sans", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #151515;
+    }
+    
+    .markdown-section label:hover {
+      color: #0066CC;
+    }
+    
+    /* Checklist container styling */
+    .markdown-section ul li,
+    .markdown-section ol li {
+      list-style: none;
+      margin-left: 0;
+    }
+    
+    .markdown-section ul li:has(input[type="checkbox"]),
+    .markdown-section ol li:has(input[type="checkbox"]) {
+      margin-bottom: 12px;
+      padding-left: 0;
     }
   </style>
 </body>

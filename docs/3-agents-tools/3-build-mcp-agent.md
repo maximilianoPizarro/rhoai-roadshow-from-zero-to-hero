@@ -137,6 +137,13 @@ quarkus.otel.exporter.otlp.endpoint=http://dev-collector.observability.svc.clust
 - **`quarkus.otel.exporter.otlp.endpoint`**: Points to the OpenTelemetry collector in the `observability` namespace
 
 **Connection to Backend:**
+- The `customer-service-mcp` service connects to the backend API at `https://neuralbank.apps.<CLUSTER_DOMAIN>/api`
+- Backend endpoints used:
+  - `GET /api/customers/{customerId}` - Get customer information
+  - `GET /api/customers/{customerId}/email` - Get customer email
+  - `GET /api/customers/{customerId}/phone` - Get customer phone
+  - `PUT /api/customers/{customerId}` - Update customer information
+  - `POST /api/customers/{customerId}/risk-level` - Update risk level
 - The OpenTelemetry collector receives traces from `customer-service-mcp`
 - Traces include spans for:
   - MCP tool invocations
@@ -258,11 +265,11 @@ Once committed, test in LlamaStack Playground:
 
 You've successfully built your MCP Agent! You've learned how to:
 
-- <input type="checkbox" id="build1" checked> <label for="build1">Navigate the generated project structure</label>
-- <input type="checkbox" id="build2" checked> <label for="build2">Implement the updateRiskLevel tool in CustomerTools</label>
-- <input type="checkbox" id="build3" checked> <label for="build3">Configure OpenTelemetry for observability</label>
-- <input type="checkbox" id="build4" checked> <label for="build4">Integrate with backend services via Connectivity Link</label>
-- <input type="checkbox" id="build5" checked> <label for="build5">Commit and push changes to GitLab</label>
+- <input type="checkbox" id="build1"> <label for="build1">Navigate the generated project structure</label>
+- <input type="checkbox" id="build2"> <label for="build2">Implement the updateRiskLevel tool in CustomerTools</label>
+- <input type="checkbox" id="build3"> <label for="build3">Configure OpenTelemetry for observability</label>
+- <input type="checkbox" id="build4"> <label for="build4">Integrate with backend services via Connectivity Link</label>
+- <input type="checkbox" id="build5"> <label for="build5">Commit and push changes to GitLab</label>
 
 Your MCP Agent is now ready for testing! The `updateRiskLevel` tool will allow commercial agents to modify credit risk assessments based on loan requests.
 

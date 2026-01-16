@@ -373,11 +373,11 @@ Use Grafana or OpenShift monitoring to create dashboards:
 
 ## Best Practices
 
-<input type="checkbox" id="best1" checked> <label for="best1">**Add Meaningful Attributes**: Include business context (customer ID, risk levels)</label>  
-<input type="checkbox" id="best2" checked> <label for="best2">**Use Semantic Conventions**: Follow OpenTelemetry naming conventions</label>  
-<input type="checkbox" id="best3" checked> <label for="best3">**Correlate Logs**: Use trace IDs in log messages</label>  
-<input type="checkbox" id="best4" checked> <label for="best4">**Sample Appropriately**: Balance detail with performance</label>  
-<input type="checkbox" id="best5" checked> <label for="best5">**Monitor Key Operations**: Focus on critical business operations</label>  
+<input type="checkbox" id="best1"> <label for="best1">**Add Meaningful Attributes**: Include business context (customer ID, risk levels)</label>  
+<input type="checkbox" id="best2"> <label for="best2">**Use Semantic Conventions**: Follow OpenTelemetry naming conventions</label>  
+<input type="checkbox" id="best3"> <label for="best3">**Correlate Logs**: Use trace IDs in log messages</label>  
+<input type="checkbox" id="best4"> <label for="best4">**Sample Appropriately**: Balance detail with performance</label>  
+<input type="checkbox" id="best5"> <label for="best5">**Monitor Key Operations**: Focus on critical business operations</label>  
 
 ## Compliance and Auditing
 
@@ -395,13 +395,13 @@ This satisfies Neuralbank's compliance requirements for transparent and auditabl
 
 **Outstanding work!** You've successfully completed the entire MCP Agents workshop from zero to hero. Here's what you've accomplished:
 
-<input type="checkbox" id="journey1" checked> <label for="journey1">**Built and deployed an MCP Agent** - Created a production-ready MCP service using Quarkus</label>  
-<input type="checkbox" id="journey2" checked> <label for="journey2">**Integrated with Neuralbank's systems** - Connected to backend services via Connectivity Link</label>  
-<input type="checkbox" id="journey3" checked> <label for="journey3">**Set up comprehensive observability** - Implemented distributed tracing with OpenTelemetry</label>  
-<input type="checkbox" id="journey4" checked> <label for="journey4">**Configured authentication** - Integrated Keycloak for secure access</label>  
-<input type="checkbox" id="journey5" checked> <label for="journey5">**Implemented rate limiting** - Protected services with Connectivity Link policies</label>  
-<input type="checkbox" id="journey6" checked> <label for="journey6">**Tested thoroughly** - Validated functionality with MCP Inspector and Cursor</label>  
-<input type="checkbox" id="journey7" checked> <label for="journey7">**Deployed to production** - Integrated with LlamaStack Playground for real-world use</label>  
+<input type="checkbox" id="journey1"> <label for="journey1">**Built and deployed an MCP Agent** - Created a production-ready MCP service using Quarkus</label>  
+<input type="checkbox" id="journey2"> <label for="journey2">**Integrated with Neuralbank's systems** - Connected to backend services via Connectivity Link</label>  
+<input type="checkbox" id="journey3"> <label for="journey3">**Set up comprehensive observability** - Implemented distributed tracing with OpenTelemetry</label>  
+<input type="checkbox" id="journey4"> <label for="journey4">**Configured authentication** - Integrated Keycloak for secure access</label>  
+<input type="checkbox" id="journey5"> <label for="journey5">**Implemented rate limiting** - Protected services with Connectivity Link policies</label>  
+<input type="checkbox" id="journey6"> <label for="journey6">**Tested thoroughly** - Validated functionality with MCP Inspector and Cursor</label>  
+<input type="checkbox" id="journey7"> <label for="journey7">**Deployed to production** - Integrated with LlamaStack Playground for real-world use</label>  
 
 ### What You've Built
 

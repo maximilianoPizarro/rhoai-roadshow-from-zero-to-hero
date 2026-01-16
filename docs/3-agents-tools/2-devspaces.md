@@ -120,10 +120,10 @@ To preview and test the MCP service locally in your DevSpaces workspace:
 
 You've successfully set up your DevSpaces workspace! You've learned how to:
 
-- <input type="checkbox" id="devspaces1" checked> <label for="devspaces1">Access and configure DevSpaces workspaces</label>
-- <input type="checkbox" id="devspaces2" checked> <label for="devspaces2">Navigate the development environment</label>
-- <input type="checkbox" id="devspaces3" checked> <label for="devspaces3">Preview the MCP service locally</label>
-- <input type="checkbox" id="devspaces4" checked> <label for="devspaces4">Understand the development workflow</label>
+- <input type="checkbox" id="devspaces1"> <label for="devspaces1">Access and configure DevSpaces workspaces</label>
+- <input type="checkbox" id="devspaces2"> <label for="devspaces2">Navigate the development environment</label>
+- <input type="checkbox" id="devspaces3"> <label for="devspaces3">Preview the MCP service locally</label>
+- <input type="checkbox" id="devspaces4"> <label for="devspaces4">Understand the development workflow</label>
 
 Your development environment is now ready! You can start building and testing your MCP Agent.
 

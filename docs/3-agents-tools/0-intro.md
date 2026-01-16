@@ -408,11 +408,11 @@ The MCP server runs on OpenShift and implements the Model Context Protocol. It e
 
 ## Benefits for Neuralbank
 
-<input type="checkbox" id="benefit1" checked> <label for="benefit1">**Faster Decisions**: Reduce credit approval time from days to minutes</label>  
-<input type="checkbox" id="benefit2" checked> <label for="benefit2">**Scalability**: Handle increasing loan volumes without proportional staff increases</label>  
-<input type="checkbox" id="benefit3" checked> <label for="benefit3">**Compliance**: Full audit trail of all operations</label>  
-<input type="checkbox" id="benefit4" checked> <label for="benefit4">**Transparency**: Clear visibility into risk assessment changes</label>  
-<input type="checkbox" id="benefit5" checked> <label for="benefit5">**Developer Experience**: Easy to develop, test, and deploy using Golden Path</label>  
+<input type="checkbox" id="benefit1"> <label for="benefit1">**Faster Decisions**: Reduce credit approval time from days to minutes</label>  
+<input type="checkbox" id="benefit2"> <label for="benefit2">**Scalability**: Handle increasing loan volumes without proportional staff increases</label>  
+<input type="checkbox" id="benefit3"> <label for="benefit3">**Compliance**: Full audit trail of all operations</label>  
+<input type="checkbox" id="benefit4"> <label for="benefit4">**Transparency**: Clear visibility into risk assessment changes</label>  
+<input type="checkbox" id="benefit5"> <label for="benefit5">**Developer Experience**: Easy to develop, test, and deploy using Golden Path</label>  
 
 ## What's Next?
 
