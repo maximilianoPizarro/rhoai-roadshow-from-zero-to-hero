@@ -578,6 +578,43 @@
     .cover.show::before {
       animation: subtleFade 8s ease-in-out infinite;
     }
+    
+    /* Image styling - center and adjust size */
+    .markdown-section img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* Smaller images - stretch horizontally if needed */
+    .markdown-section img[src*="connectivity-link"],
+    .markdown-section img[src*="topology"],
+    .markdown-section img[src*="ratelimit"],
+    .markdown-section img[src*="devspaces"],
+    .markdown-section img[src*="customer-service"],
+    .markdown-section img[src*="quarkus"],
+    .markdown-section img[src*="rhbk"],
+    .markdown-section img[src*="neuralbank"],
+    .markdown-section img[src*="optl"],
+    .markdown-section img[src*="loan"],
+    .markdown-section img[src*="cursor"],
+    .markdown-section img[src*="llama-stack"] {
+      max-width: 80%;
+      width: auto;
+      height: auto;
+    }
+    
+    /* Checkbox styling */
+    .markdown-section input[type="checkbox"] {
+      margin-right: 8px;
+      cursor: pointer;
+    }
+    
+    .markdown-section label {
+      cursor: pointer;
+      user-select: none;
+    }
   </style>
 </body>
 </html>

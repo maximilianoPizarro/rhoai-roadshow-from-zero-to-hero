@@ -20,7 +20,7 @@ For Neuralbank, MCP Agents serve as intelligent intermediaries that:
 
 **LlamaStack** is an open-source framework for building production-ready generative AI applications on Kubernetes. It provides a comprehensive, enterprise-grade platform for deploying, managing, and orchestrating Large Language Models (LLMs), tools, agents, and MCP servers at scale.
 
-![LlamaStack Overview](../images/llama-stack.png)
+<img src="../images/llama-stack.png" alt="LlamaStack Overview" width="50%" style="display: block; margin: 0 auto;">
 
 > **Reference**: This section is based on insights from the Red Hat blog post: ["Llama Stack and the case for an open 'run-anywhere' contract for agents"](https://www.redhat.com/en/blog/llama-stack-and-case-open-run-anywhere-contract-agents)
 
@@ -112,7 +112,7 @@ The Neuralbank topology is already installed in your environment. The complete a
 - **Connectivity Link**: Service mesh for secure communication
 - **MCP Agent**: The `customer-service-mcp` service you'll develop
 
-![Neuralbank Topology with Connectivity Link](../images/neuralbank-tology-connectivity-link.png)
+<img src="../images/neuralbank-tology-connectivity-link.png" alt="Neuralbank Topology with Connectivity Link" style="max-width: 80%; display: block; margin: 20px auto;">
 
 ?> **Note**: The complete Neuralbank topology diagram is available in the [Resources section](6-resources/README) under Helm Chart deployment.
 
@@ -168,11 +168,11 @@ The MCP server runs on OpenShift and implements the Model Context Protocol. It e
 
 ## Benefits for Neuralbank
 
-✅ **Faster Decisions**: Reduce credit approval time from days to minutes  
-✅ **Scalability**: Handle increasing loan volumes without proportional staff increases  
-✅ **Compliance**: Full audit trail of all operations  
-✅ **Transparency**: Clear visibility into risk assessment changes  
-✅ **Developer Experience**: Easy to develop, test, and deploy using Golden Path  
+<input type="checkbox" id="benefit1" checked> <label for="benefit1">**Faster Decisions**: Reduce credit approval time from days to minutes</label>  
+<input type="checkbox" id="benefit2" checked> <label for="benefit2">**Scalability**: Handle increasing loan volumes without proportional staff increases</label>  
+<input type="checkbox" id="benefit3" checked> <label for="benefit3">**Compliance**: Full audit trail of all operations</label>  
+<input type="checkbox" id="benefit4" checked> <label for="benefit4">**Transparency**: Clear visibility into risk assessment changes</label>  
+<input type="checkbox" id="benefit5" checked> <label for="benefit5">**Developer Experience**: Easy to develop, test, and deploy using Golden Path</label>  
 
 ## What's Next?
 

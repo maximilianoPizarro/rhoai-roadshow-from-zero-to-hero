@@ -373,11 +373,11 @@ Use Grafana or OpenShift monitoring to create dashboards:
 
 ## Best Practices
 
-✅ **Add Meaningful Attributes**: Include business context (customer ID, risk levels)  
-✅ **Use Semantic Conventions**: Follow OpenTelemetry naming conventions  
-✅ **Correlate Logs**: Use trace IDs in log messages  
-✅ **Sample Appropriately**: Balance detail with performance  
-✅ **Monitor Key Operations**: Focus on critical business operations  
+<input type="checkbox" id="best1" checked> <label for="best1">**Add Meaningful Attributes**: Include business context (customer ID, risk levels)</label>  
+<input type="checkbox" id="best2" checked> <label for="best2">**Use Semantic Conventions**: Follow OpenTelemetry naming conventions</label>  
+<input type="checkbox" id="best3" checked> <label for="best3">**Correlate Logs**: Use trace IDs in log messages</label>  
+<input type="checkbox" id="best4" checked> <label for="best4">**Sample Appropriately**: Balance detail with performance</label>  
+<input type="checkbox" id="best5" checked> <label for="best5">**Monitor Key Operations**: Focus on critical business operations</label>  
 
 ## Compliance and Auditing
 
@@ -395,9 +395,9 @@ This satisfies Neuralbank's compliance requirements for transparent and auditabl
 
 Congratulations! You've completed the full journey:
 
-✅ Built and deployed an MCP Agent  
-✅ Integrated with Neuralbank's systems  
-✅ Set up comprehensive observability  
+<input type="checkbox" id="journey1" checked> <label for="journey1">Built and deployed an MCP Agent</label>  
+<input type="checkbox" id="journey2" checked> <label for="journey2">Integrated with Neuralbank's systems</label>  
+<input type="checkbox" id="journey3" checked> <label for="journey3">Set up comprehensive observability</label>  
 
 Your MCP Agent is now production-ready and helping Neuralbank accelerate credit decisions while maintaining compliance!
 

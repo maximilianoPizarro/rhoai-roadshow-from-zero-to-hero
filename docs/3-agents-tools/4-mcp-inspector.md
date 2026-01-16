@@ -267,13 +267,13 @@ MCP Inspector is a comprehensive testing tool that provides:
 
 Before moving to deployment, verify:
 
-- ✅ All tools are discoverable
-- ✅ Tools execute successfully with valid parameters
-- ✅ Error handling works for invalid inputs
-- ✅ Authentication via Keycloak functions correctly
-- ✅ Connectivity Link integration works
-- ✅ Responses match expected schemas
-- ✅ Performance meets requirements (< 2s response time)
+- <input type="checkbox" id="check1"> <label for="check1">All tools are discoverable</label>
+- <input type="checkbox" id="check2"> <label for="check2">Tools execute successfully with valid parameters</label>
+- <input type="checkbox" id="check3"> <label for="check3">Error handling works for invalid inputs</label>
+- <input type="checkbox" id="check4"> <label for="check4">Authentication via Keycloak functions correctly</label>
+- <input type="checkbox" id="check5"> <label for="check5">Connectivity Link integration works</label>
+- <input type="checkbox" id="check6"> <label for="check6">Responses match expected schemas</label>
+- <input type="checkbox" id="check7"> <label for="check7">Performance meets requirements (< 2s response time)</label>
 
 ## Next Steps
 
